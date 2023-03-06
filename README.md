@@ -1,108 +1,273 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Speak EV
 
-Welcome USER_NAME,
+Speak EV is a...
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The primary technologies used to form the basis of this website are the coding languages HTML, CSS...
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[View the live site here](#)
 
-## Gitpod Reminders
+&nbsp;
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Responsive Mockup](#)
 
-`python3 -m http.server`
+&nbsp;
 
-A blue button should appear to click: _Make Public_,
+# Table of Contents
+  * [UX and UI](#ux-and-ui)
+    * [Research](#research)
+    * [Owner Goals](#owner-goals)
+    * [User Stories](#user-stories)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+    * [Design](#design)
+    * [Wireframes](#wireframes)
+  * [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features to be Implemented in the Future](#features-to-be-implemented-in-future)
+  * [Technologies Used](#technologies-used)
+    * [Languages](#languages)
+    * [Frameworks and Libraries](#frameworks-and-libraries)
+    * [Testing and Validation Tools](#testing-and-validation-tools)
+  * [Testing](#testing)
+  * [Validation](#validation)
+    * [HTML](#html)
+    * [CSS](#css)
+    * [Color Contrast](#color-contrast)
+  * [Deployment](#deployment)
+    * [Forking the GitHub Repository](#forking-the-github-repository)
+    * [Making a Local Clone](#making-a-local-clone)
+  * [Credits](#credits)
 
-Another blue button should appear to click: _Open Browser_.
+&nbsp;
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# UX and UI
 
-A blue button should appear to click: _Make Public_,
+## Research
 
-Another blue button should appear to click: _Open Browser_.
+Research for the creation of this site was carried out by searching for various forms and variations on the 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* [#](#)
+* [#](#)
+* [#](#)
+* [#](#)
 
-To log into the Heroku toolbelt CLI:
+&nbsp;
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Owner Goals
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  * Create...
 
-------
+&nbsp;
 
-## Release History
+## User Stories
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### First Time Visitor
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+  * As a first time user, I want to...
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Returning Visitor
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  * As a returning user, I want to...
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+&nbsp;
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## User Requirements and Expectations
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Requirements
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  * Familiar and intuitive design that negates any learning curve.
+  * A reactive site that is user friendly and well presented on all types of device and screen sizes.
+  * Adequate levels of color contrast across the site that presents content in an accessible and easy to read manner.
+  * Appealing visual presentation that enhances the user experience.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Expectations
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  * Feedback when interacting with the site that is also instructive.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+&nbsp;
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Design
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Imagery
+* An image of...
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Color Scheme
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* Black and white colours were used...
 
-------
+### Fonts
 
-## FAQ about the uptime script
+* The Google font of...
 
-**Why have you added this script?**
+### Structure
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* This is a...
 
-**How will this affect me?**
+&nbsp;
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Wireframes
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* Balsamiq Wireframes was used to create the wireframes for this site. 
+Wireframes for mobile, tablet, and desktop can be found below:
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+  ### [Mobile Wireframe](#)
 
-**So….?**
+  ### [Tablet Wireframe](#)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  ### [Desktop Wireframe](#)
 
-**Can I opt out?**
+&nbsp;
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+[Back to top &uarr;](#speak-ev)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+# Features 
 
-**Anything more?**
+## Existing Features
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+* Header
 
----
+  * The header contains a h1 element, with...
 
-Happy coding!
+    ![Header](#)
+
+* Footer
+
+  * The footer consists of...
+
+    ![Footer](#)
+
+
+## Features to be Implemented in Future
+
+  In the future...
+
+&nbsp;
+
+[Back to top &uarr;](#speak-ev)
+
+# Technologies Used
+
+## Languages
+  * [HTML](https://en.wikipedia.org/wiki/HTML)
+  * [CSS](https://en.wikipedia.org/wiki/CSS)
+  * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+## Frameworks and Libraries
+
+  * [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+    * Bootstrap v5.2.3 was used to form the user input section of the site, namely to provide the text input and button elements.
+  * [Google Fonts](https://fonts.google.com/)
+    * Google Fonts was used to import the 'Barlow' font used throughout the site.
+
+## Testing and Validation Tools
+  * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    * Google Chrome DevTools was used to carry out manual testing on the website and to simulate mobile devices.
+  * [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
+    * The W3C Markup Validation Service was used to check the markup validity of the html code. 
+  * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri)
+    * The W3C CSS Validation Service was used to validate the css code.
+  * [JSHint](https://jshint.com/)
+    * The JSHint static code analysis tool was used to check if the JavaScript source code complies with coding rules. 
+  * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+    * Lighthouse was used to audit performance, accessibility, best practices and SEO across the website.
+  * [a11y](https://color.a11y.com/)
+    * The a11y Color Contrast Accessibility Validator was used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
+  * [LambdaTest](https://www.lambdatest.com/)
+    * LambdaTest was used to perform cross browser testing.
+
+&nbsp;
+
+[Back to top &uarr;](#speak-ev)
+
+# Testing 
+
+Testing information can be found in the [testing file][TESTING.md].
+
+&nbsp;
+
+[Back to top &uarr;](#speak-ev)
+
+# Validation
+
+## HTML
+The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
+
+<details><summary>HTML Validation</summary>
+<img src="readme-files/images/w3c-html.png" alt="Validation of website html code">
+</details>
+
+&nbsp;
+
+## CSS
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code.
+No errors were found but four warnings were highlighted; as these related to the imported google fonts stylesheet and vendor extensions, they are not of any concern.
+
+<details><summary>CSS Validation</summary>
+<img src="readme-files/images/w3c-css.png" alt="Validation of website CSS>
+</details>
+
+<details><summary>CSS Warnings</summary>
+<img src="readme-files/images/w3c-css-warnings.png" alt="CSS validation warnings">
+</details>
+
+&nbsp;
+
+## JavaScript
+[JSHint](https://jshint.com/) was used to check if JavaScript source code complies with coding rules. The code was successfully validated with no errors or warnings.
+
+<details><summary>JavaScript Validation</summary>
+<img src="readme-files/images/jshint.png" alt="Validation of website JavaScript code">
+</details>
+
+&nbsp;
+
+## Color Contrast
+The color contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
+
+<details>
+<summary>Color Contrast Validation</summary>
+
+![Color Contrast Validation](/readme-files/images/a11l-color-contrast.png)
+</details>
+
+&nbsp;
+
+[Back to top &uarr;](#speak-ev)
+
+# Deployment
+
+The site was deployed... The steps to deploy are as follows:
+  1. Log in to... 
+
+The live link can be found [here](#)
+
+&nbsp;
+
+[Back to top &uarr;](#speak-ev)
+
+# Credits 
+
+## Content 
+
+  * The Code Institute readme-template provided the basic structure for the readme.md file.
+
+## Media
+
+  * The favicon icon image is from... [#](#) 
+
+## Code
+
+  * The CSS code for... [#](#) 
+
+Various online tutorials were consulted to help better understand the methodology needed to create this site. These include the following:
+  * [#](#) by...
+
+## Acknowledgements
+
+  * I would like to thank my mentor, Oluwaseun Owonikoko, who assisted me on this project.
+  * I would also like to acknowledge the support and advice obtained from the Code Institute Slack community. 
+
+  &nbsp;
+
+  [Back to top &uarr;](#speak-ev)
+
+[TESTING.md]: TESTING.md
