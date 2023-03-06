@@ -1,6 +1,6 @@
 # Speak EV
 
-Speak EV is a...
+Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles. The site allows any visiter to view the dictionary and for registered users to add their own terms to it. 
 
 The primary technologies used to form the basis of this website are the coding languages HTML, CSS...
 
@@ -54,19 +54,29 @@ Research for the creation of this site was carried out by searching for various 
 
 ## Owner Goals
 
-  * Create...
+  * As the site owner, I want to be able to add catagories under which the dictionary terms can be organised.
+  * As the site owner, I want to be able to add, edit, or delete categories.
+  * As the site owner, I want to be able to add, edit, or delete dictionary terms.
 
 &nbsp;
 
 ## User Stories
 
 ### First Time Visitor
-
-  * As a first time user, I want to...
+ 
+  * As a first time user, I want to immediately understand the purpose of the website.
+  * As a first time user, I want to be able to browse the dictionary without having to register.
+  * As a first time user, I want to be able to search for keywords.
+  * As a first time user, I want to be able to filter activities by catagory.
+  * As a first time user, I want to be able to register easily without having to supply a lot of information.
 
 ### Returning Visitor
 
-  * As a returning user, I want to...
+  * As a returning user, I want to be able to log-in and out easily.
+  * As a returning user, I want to be able to add new terms to the dictionary.
+  * As a returning user, I want to be able to see all terms that I have added in one place.
+  * As a returning user, I want to be able to find, edit, and delete terms that I have added.
+
 
 &nbsp;
 
@@ -109,11 +119,11 @@ Research for the creation of this site was carried out by searching for various 
 * Balsamiq Wireframes was used to create the wireframes for this site. 
 Wireframes for mobile, tablet, and desktop can be found below:
 
-  ### [Mobile Wireframe](#)
+  ### [Mobile Wireframe](/readme-files/wireframes/MS3%20Wireframes%20(phone).pdf)
 
-  ### [Tablet Wireframe](#)
+  ### [Tablet Wireframe](/readme-files/wireframes/MS3%20Wireframes%20(tablet).pdf)
 
-  ### [Desktop Wireframe](#)
+  ### [Desktop Wireframe](/readme-files/wireframes/MS3%20Wireframes%20(desktop).pdf)
 
 &nbsp;
 
