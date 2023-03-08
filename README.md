@@ -2,7 +2,7 @@
 
 Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles. The site allows any visiter to view the dictionary and for registered users to add their own terms to it. 
 
-The primary technologies used to form the basis of this website are the coding languages HTML, CSS...
+The primary technologies used to form the basis of this website are the coding languages HTML, CSS... and the document based database MongoDB.
 
 [View the live site here](#)
 
@@ -160,6 +160,9 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [HTML](https://en.wikipedia.org/wiki/HTML)
   * [CSS](https://en.wikipedia.org/wiki/CSS)
   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+## Database
+    [MongoDB](#)
 
 ## Frameworks and Libraries
 
