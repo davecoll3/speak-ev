@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Sign Up</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
+            <div class="card-panel">
+                <!-- username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-robot prefix"></i>
+                        <input id="username" name="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- username end -->
+
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-lock prefix"></i>
+                        <input id="password" name="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- password end -->
+
+                <!-- submit button -->
+                <div class="row">
+                    <button type="submit" class="col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4 btn-large light-green accent-3 grey-text text-darken-4 waves-effect">
+                        Submit <i class="fa-solid fa-bolt"></i>
+                    </button>
+                </div>
+                <!-- submit button end -->
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
