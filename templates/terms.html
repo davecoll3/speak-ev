@@ -1,24 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for term in terms %}
-        {{ term.term_name }}<br>
-        {{ term.alternative_name }}<br>
-        {{ term.term_description }}<br>
-        {{ term.category_name }}<br>
-    {% endfor %} 
     <ul class="collapsible popout">
+        {% for term in terms %}
         <li>
-            <div class="collapsible-header"><i class="fa-solid fa-charging-station"></i></i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-header">
+                <i class="fa-solid fa-charging-station"></i></i>
+                <strong>{{ term.term_name }}</strong>
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ term.alternative_name }}</strong>
+                <p>{{ term.term_description }}</p>
+                <strong>Category: {{ term.category_name }}</strong>
+            </div>
         </li>
-        <li>
-            <div class="collapsible-header"><i class="fa-solid fa-charging-station"></i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="fa-solid fa-charging-station"></i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% endfor %} 
     </ul>
 {% endblock %}
