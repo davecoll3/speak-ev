@@ -14,7 +14,11 @@
                 <strong>{{ term.alternative_name }}</strong>
                 <p>{{ term.term_definition }}</p>
                 <strong>Category: {{ term.category_name }}</strong>
-                <p><em>by: {{ term.created_by }}</em></p>
+                <p><em>Posted by: {{ term.created_by }} on {{ term.created_on }}</em></p>
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn-small light-green accent-3 grey-text text-darken-4">Edit</a>
+                    <a class="waves-effect waves-light btn-small red lighten-1 grey-text text-darken-4 waves-effect">Delete</a>
+                </div>
             </div>
         </li>
         {% endfor %} 

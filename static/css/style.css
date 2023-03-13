@@ -1,3 +1,11 @@
 .sidenav li>a {
     color: #fff;
 }
+
+.btn-small {
+    margin: 5px;
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+}

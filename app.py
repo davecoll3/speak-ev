@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -106,7 +107,8 @@ def add_term():
             "term_name": request.form.get("term_name"),
             "alternative_name": request.form.get("alternative_name"),
             "term_definition": request.form.get("term_definition"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "created_on": datetime.today().strftime("%d-%b-%Y")
         }
         mongo.db.terms.insert_one(term)
         flash("Term Successfully Added to Dictionary")
