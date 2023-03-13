@@ -98,8 +98,20 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_term")
+@app.route("/add_term", methods=["GET", "POST"])
 def add_term():
+    if request.method == "POST":
+        term = {
+            "category_name": request.form.get("category_name"),
+            "term_name": request.form.get("term_name"),
+            "alternative_name": request.form.get("alternative_name"),
+            "term_definition": request.form.get("term_definition"),
+            "created_by": session["user"]
+        }
+        mongo.db.terms.insert_one(term)
+        flash("Term Successfully Added to Dictionary")
+        return redirect(url_for("get_terms"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_term.html", categories=categories)
 
