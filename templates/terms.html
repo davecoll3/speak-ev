@@ -24,7 +24,7 @@
                         class="waves-effect waves-light btn-small light-green accent-3 grey-text text-darken-4">
                             Edit <i class="fas fa-plug-circle-bolt right"></i>
                         </a>
-                        <a href="" 
+                        <a href="{{ url_for('delete_term', term_id=term._id) }}" 
                         class="waves-effect waves-light btn-small red lighten-1 grey-text text-darken-4">
                             Delete <i class="fas fa-plug-circle-xmark right"></i>
                         </a>
