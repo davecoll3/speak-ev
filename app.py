@@ -120,6 +120,18 @@ def add_term():
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
+    if request.method == "POST":
+        submit = {"$set": {
+            "category_name": request.form.get("category_name"),
+            "term_name": request.form.get("term_name"),
+            "alternative_name": request.form.get("alternative_name"),
+            "term_definition": request.form.get("term_definition"),
+            "created_by": session["user"],
+            "created_on": datetime.today().strftime("%d-%b-%Y")
+        }}
+        mongo.db.terms.update_one({"_id": ObjectId(term_id)}, submit)
+        flash("Term Successfully Updated on Dictionary")
+
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_term.html", term=term, categories=categories)
