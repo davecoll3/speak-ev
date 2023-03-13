@@ -3,6 +3,25 @@
 
     <h3 class="center-align">Terms Dictionary</h3>
 
+    <div class="row card-panel grey lighten-5">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fa-solid fa-search prefix light-blue-text text-darken-4"></i>
+                    <input type="text" name="query" id="query" minlength="2" class="validate" required>
+                    <label for="query">Search Dictionary</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_terms') }}" class="red btn">Reset</a>
+                    <button type="submit" class="light-blue darken-1 btn">
+                        <i class="fa-solid fa-search left"></i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if terms|length > 0 %}
     <ul class="collapsible popout">
         {% for term in terms %}
         <li>
@@ -34,4 +53,9 @@
         </li>
         {% endfor %} 
     </ul>
+    {% else %}
+        <div class="light-green accent-1">
+            <h3 class="center-align grey-text text-darken-4">No Results Found</h3>
+        </div>
+    {% endif %}
 {% endblock %}
