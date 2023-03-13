@@ -10,9 +10,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% if category.category_name == term.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="category_name">Term Category</label>
@@ -25,7 +29,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pen-to-square prefix"></i>
                     <input id="term_name" name="term_name" minlength="2" maxlength="30"
-                    type="text" class="validate" required>
+                    value="{{ term.term_name }}" type="text" class="validate" required>
                     <label for="term_name">Term Name or Acronym</label>
                 </div>
             </div>
@@ -36,7 +40,7 @@
                 <div class="input-field col s12">
                     <i class="fa-regular fa-pen-to-square prefix"></i>
                     <input id="alternative_name" name="alternative_name" minlength="2" maxlength="50"
-                    type="text" class="validate">
+                    value="{{ term.alternative_name }}" type="text" class="validate">
                     <label for="alternative_name">Alternative Name (if applicable)</label>
                 </div>
             </div>
@@ -47,7 +51,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="term_definition" name="term_definition" minlength="5"
-                        maxlength="500" class="materialize-textarea validate" required></textarea>
+                        maxlength="500" class="materialize-textarea validate" required>
+                        {{- term.term_definition -}}
+                    </textarea>
                     <label for="term_definition">Term Definition</label>
                 </div>
             </div>
@@ -56,8 +62,12 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-green accent-3 grey-text text-darken-4 waves-effect">
-                        Edit Term <i class="fas fa-solid fa-plug-circle-bolt right"></i>
+                    <!-- cancel button -->
+                    <a href="{{ url_for('get_terms') }}" class="waves-effect waves-light btn-large red lighten-1 grey-text text-darken-4">
+                        Cancel <i class="fas fa-plug-circle-xmark right"></i>
+                    </a>
+                    <button type="submit" class="waves-effect btn-large light-green accent-3 grey-text text-darken-4">
+                        Edit Term <i class="fas fa-plug-circle-bolt right"></i>
                     </button>
                 </div>
             </div>
