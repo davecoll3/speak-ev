@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Category</h3>
+    <h3 class="center-align">Edit Category</h3>
 
     <div class="row card-panel grey lighten-4">
-        <form class="col s12" method="POST" action="{{ url_for('add_category') }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_category', category_id=category._id) }}">
             <!-- category name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
                     <input id="category_name" name="category_name" minlength="2" maxlength="30"
-                    type="text" class="validate" required>
+                    type="text" value="{{ category.category_name }}" class="validate" required>
                     <label for="category_name">Category Name</label>
                 </div>
             </div>
@@ -19,8 +19,11 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
+                    <a href="{{ url_for('get_categories') }}" class="btn-large red lighten-1 grey-text text-darken-4">
+                        Cancel <i class="fa-solid fa-plug-circle-xmark right"></i>
+                    </a>
                     <button type="submit" class="btn-large waves-effect light-green accent-3 grey-text text-darken-4">
-                        Add Category <i class="fa-solid fa-plug-circle-plus right"></i>
+                        Edit Category <i class="fa-solid fa-plug-circle-bolt right"></i>
                     </button>
                 </div>
             </div>
