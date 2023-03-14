@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- page header -->
     <h3 class="center-align">Sign Up</h3>
+    <!-- page header end -->
 
+    <!-- sign-up card panel -->
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
             <div class="card-panel">
-                <!-- username -->
+                <!-- username input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-robot prefix grey-text text-darken-4"></i>
@@ -15,9 +18,9 @@
                         <label for="username">Username</label>
                     </div>
                 </div>
-                <!-- username end -->
+                <!-- username input end -->
 
-                <!-- password -->
+                <!-- password input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-lock prefix grey-text text-darken-4"></i>
@@ -26,7 +29,7 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <!-- password end -->
+                <!-- password input end -->
 
                 <!-- submit button -->
                 <div class="row">
@@ -38,7 +41,9 @@
             </div>
         </form>
     </div>
+    <!-- sign-up card panel end -->
 
+    <!-- login link -->
     <div class="row">
         <div class="col s12">
             <p class="center-align">
@@ -47,5 +52,6 @@
             </p>
         </div>
     </div>
+    <!-- login link end -->
 
 {% endblock %}

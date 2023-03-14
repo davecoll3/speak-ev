@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- page header -->
     <h3 class="center-align">Terms Dictionary</h3>
+    <!-- page header end -->
 
+    <!-- search bar -->
     <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
+                <!-- search button -->
                 <div class="input-field col s12 m8">
                     <i class="fa-solid fa-search prefix light-blue-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="2" class="validate" required>
                     <label for="query">Search Dictionary</label>
                 </div>
+                <!-- reset button -->
                 <div class="col s12 m4">
                     <button type="submit" class="light-blue darken-1 btn">
                         <i class="fa-solid fa-search left"></i> Search
@@ -20,15 +25,19 @@
             </div>
         </form>
     </div>
+    <!-- search bar end -->
 
     {% if terms|length > 0 %}
+    <!-- dictionary terms collapsible -->
     <ul class="collapsible popout">
         {% for term in terms %}
         <li>
+            <!-- term name header -->
             <div class="collapsible-header">
                 <i class="fa-solid fa-charging-station"></i></i>
                 <strong>{{ term.term_name }}</strong>
             </div>
+            <!-- alternative name & definition -->
             <div class="collapsible-body">
                 <strong>{{ term.alternative_name }}</strong>
                 <p>{{ term.term_definition }}</p>
@@ -38,6 +47,7 @@
                     Last update on: {{ term.created_on }}</em>
                 </p>
                 <div class="center-align">
+                    <!-- restricts edit and delete buttons to admins and terms created by the session user -->
                     {% if session.is_admin or session.user|lower == term.created_by|lower %}
                         <a href="{{ url_for('edit_term', term_id=term._id) }}" 
                         class="waves-effect waves-light btn-small light-green accent-3 grey-text text-darken-4">
@@ -53,9 +63,13 @@
         </li>
         {% endfor %} 
     </ul>
+    <!-- dictionary terms collapsible end -->
+
     {% else %}
+        <!-- no results message -->
         <div class="light-green accent-1">
             <h3 class="center-align grey-text text-darken-4">No Results Found</h3>
         </div>
+        <!-- no results message end -->
     {% endif %}
 {% endblock %}

@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- page header -->
     <h3 class="center-align">Add Term</h3>
+    <!-- page header end -->
 
+    <!-- add term card -->
     <div class="row card-panel grey lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('add_term') }}">
-            <!-- category selection -->
+            <!-- category selection dropdown -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
@@ -18,9 +21,9 @@
                     <label for="category_name">Term Category</label>
                 </div>
             </div>
-            <!-- category selection end -->
+            <!-- category selection dropdown end -->
 
-            <!-- term name -->
+            <!-- term name input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pen-to-square prefix"></i>
@@ -29,9 +32,9 @@
                     <label for="term_name">Term Name or Acronym</label>
                 </div>
             </div>
-            <!-- term name end -->
+            <!-- term name input end -->
 
-            <!-- alternative name -->
+            <!-- alternative name input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-regular fa-pen-to-square prefix"></i>
@@ -40,9 +43,9 @@
                     <label for="alternative_name">Alternative Name (if applicable)</label>
                 </div>
             </div>
-            <!-- alternative name end -->
+            <!-- alternative name end input -->
 
-            <!-- term definition -->
+            <!-- definition text area -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -51,7 +54,7 @@
                     <label for="term_definition">Term Definition</label>
                 </div>
             </div>
-            <!-- term definition end -->
+            <!-- definition text area end -->
 
             <!-- submit button -->
             <div class="row">
@@ -61,8 +64,9 @@
                     </button>
                 </div>
             </div>
-            <!-- submit button -->
+            <!-- submit button end -->
         </form>
     </div>
+    <!-- add term card -->
 
 {% endblock %}

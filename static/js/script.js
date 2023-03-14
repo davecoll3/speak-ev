@@ -7,7 +7,7 @@ let collapsiblesInstance = M.Collapsible.init(collapsibles);
 let selects = document.querySelectorAll("select");
 let selectsInstance = M.FormSelect.init(selects);
 
-    /* Materialize select validation code sourced from Code Institute: https://bit.ly/3mMOpsi */
+    /* Materialize select category validation code sourced from Code Institute Task Manager mini project: https://bit.ly/3mMOpsi */
     validateMaterializeSelect();
     function validateMaterializeSelect() {         
         let classValid = "border-bottom: 1px solid #4caf50; box-shadow: 0 1px 0 0 #4caf50;";

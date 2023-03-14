@@ -1,11 +1,28 @@
+/* ==========
+google fonts
+========== */
+
+/* ==========
+general
+========== */
+
+/* ==========
+navbar
+========== */
 .sidenav li>a {
     color: #fff;
 }
 
+/* ==========
+buttons
+========== */
 .btn-small, .btn-large {
     margin: 5px;
 }
 
+/* ==========
+collapsible
+========== */
 .collapsible-header .col strong {
     margin: 5px;
 }

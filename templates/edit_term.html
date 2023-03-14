@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- page header -->
     <h3 class="center-align">Edit Term</h3>
+    <!-- page header end -->
 
+    <!-- edit term card -->
     <div class="row card-panel grey lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('edit_term', term_id=term._id) }}">
-            <!-- category selection -->
+            <!-- category selection dropdown -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
@@ -22,9 +25,9 @@
                     <label for="category_name">Term Category</label>
                 </div>
             </div>
-            <!-- category selection end -->
+            <!-- category selection dropdown end -->
 
-            <!-- term name -->
+            <!-- term name input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pen-to-square prefix"></i>
@@ -33,9 +36,9 @@
                     <label for="term_name">Term Name or Acronym</label>
                 </div>
             </div>
-            <!-- term name end -->
+            <!-- term name input end -->
 
-            <!-- alternative name -->
+            <!-- alternative name input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-regular fa-pen-to-square prefix"></i>
@@ -44,9 +47,9 @@
                     <label for="alternative_name">Alternative Name (if applicable)</label>
                 </div>
             </div>
-            <!-- alternative name end -->
+            <!-- alternative name input end -->
 
-            <!-- term definition -->
+            <!-- definition text area -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -57,22 +60,27 @@
                     <label for="term_definition">Term Definition</label>
                 </div>
             </div>
-            <!-- term definition end -->
+            <!-- definition text area end -->
 
-            <!-- submit button -->
+            <!-- buttons div -->
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
                     <a href="{{ url_for('get_terms') }}" class="waves-effect waves-light btn-large red lighten-1 grey-text text-darken-4">
                         Cancel <i class="fas fa-plug-circle-xmark right"></i>
                     </a>
+                    <!-- cancel button end -->
+
+                    <!-- edit button -->
                     <button type="submit" class="waves-effect btn-large light-green accent-3 grey-text text-darken-4">
                         Edit Term <i class="fas fa-plug-circle-bolt right"></i>
                     </button>
+                    <!-- edit button end -->
                 </div>
             </div>
-            <!-- submit button -->
+            <!-- buttons div end -->
         </form>
     </div>
+    <!-- edit term card end -->
 
 {% endblock %}

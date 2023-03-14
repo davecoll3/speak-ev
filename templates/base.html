@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheet & font awesome links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- stylesheet & font awesome links end -->
+
     {% block styles %}
     {% endblock %}
     <title>Speak EV</title>
 </head>
-<body>
 
+<body>
     <header>
         <!-- top navbar -->
         <nav class="navbar-fixed grey darken-4">
@@ -22,13 +26,17 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_terms') }}">Home</a></li>
+                <!-- displays profile and new term menu options to registerd users -->
                 {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('add_term') }}">New Term</a></li>
+                    <!-- displays manage category menu options to admins only -->
                     {% if session.user|lower == "admin"|lower %}
                         <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                    <!-- displays log out menu option to registerd users -->
                     {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <!-- displays login and sign-up menu options to all users -->
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
@@ -42,13 +50,17 @@
         <ul class="sidenav grey darken-4 blue-grey-text text-lighten-5" id="mobile-demo">
             <li><h4 class="center-align light-green-text text-accent-3">Speak EV</h4></li>
             <li><a href="{{ url_for('get_terms') }}">Home</a></li>
+            <!-- displays profile and new term menu options to registerd users -->
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_term') }}">New Term</a></li>
-            {% if session.is_admin %}
-                <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-            {% endif %}
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <!-- displays manage category menu options to admins only -->
+                {% if session.is_admin %}
+                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                <!-- displays log out menu option to registerd users -->
+                {% endif %}
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <!-- displays login and sign-up menu options to all users -->
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
@@ -75,11 +87,13 @@
         {% endblock %}
     </main>
 
+    <!-- javascript and jquery links -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- javascript and jquery links -->
+
     {% block scripts %}
     {% endblock %}
-</body>
 </body>
 </html>
