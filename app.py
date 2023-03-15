@@ -192,7 +192,8 @@ def add_category():
     if request.method == 'POST':
         # check if category already exists in db
         existing_term = mongo.db.categories.find_one(
-            {"category_name": request.form.get("category_name").upper()})
+            {"category_name": request.form.get("category_name").upper()}
+        )
 
         if existing_term:
             flash("Sorry, this category already exists")
@@ -213,7 +214,8 @@ def edit_category(category_id):
     if request.method == "POST":
         # check if category already exists in db
         existing_term = mongo.db.categories.find_one(
-            {"category_name": request.form.get("category_name").upper()})
+            {"category_name": request.form.get("category_name").upper()}
+        )
 
         if existing_term:
             flash("Sorry, this category already exists")
