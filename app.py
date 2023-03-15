@@ -136,10 +136,18 @@ def add_term():
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
     if request.method == "POST":
+        # check if term already exists in db
+        existing_term = mongo.db.terms.find_one(
+            {"term_name": request.form.get("term_name").upper()})
+
+        if existing_term:
+            flash("Sorry, this term already exists")
+            return redirect(url_for("get_terms"))
+
         submit = {"$set": {
             "category_name": request.form.get("category_name"),
-            "term_name": request.form.get("term_name"),
-            "alternative_name": request.form.get("alternative_name"),
+            "term_name": request.form.get("term_name").upper(),
+            "alternative_name": request.form.get("alternative_name").upper(),
             "term_definition": request.form.get("term_definition"),
             "created_by": session["user"],
             "created_on": datetime.today().strftime("%d-%b-%Y")
@@ -189,8 +197,16 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
+        # check if category already exists in db
+        existing_term = mongo.db.categories.find_one(
+            {"category_name": request.form.get("category_name").upper()})
+
+        if existing_term:
+            flash("Sorry, this category already exists")
+            return redirect(url_for("get_categories"))
+
         submit = {"$set": {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name").upper()
         }}
         mongo.db.categories.update_one({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
