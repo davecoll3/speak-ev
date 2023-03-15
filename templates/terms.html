@@ -1,26 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- page header -->
-    <h3 class="center-align">Terms Dictionary</h3>
-    <!-- page header end -->
+    <div class="row hero-image">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/traffic.jpg">
+                    <span class="card-title">Do You Speak EV?</span>
+                </div>
+                <div class="card-content">
+                    <p>Jargon busting explanations for common electric vehicle terms.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- search bar -->
-    <div class="row card-panel grey lighten-5">
+    <div class="row card-panel search-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
                 <!-- search button -->
                 <div class="input-field col s12 m8">
-                    <i class="fa-solid fa-search prefix light-blue-text text-darken-4"></i>
+                    <i class="fa-solid fa-search prefix grey-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="2" class="validate" required>
-                    <label for="query">Search Dictionary</label>
+                    <label for="query">Search</label>
                 </div>
                 <!-- reset button -->
                 <div class="col s12 m4">
-                    <button type="submit" class="light-blue darken-1 btn">
-                        <i class="fa-solid fa-search left"></i> Search
-                    </button>
-                    <a href="{{ url_for('get_terms') }}" class="red btn">Reset</a>
+                    <button type="submit" class="btn waves-effect light-green accent-1 grey-text text-darken-4"> Search</button>
+                    <a href="{{ url_for('get_terms') }}" class="btn blue lighten-5 grey-text text-darken-4">Reset</a>
                 </div>
             </div>
         </form>
@@ -33,12 +41,12 @@
         {% for term in terms %}
         <li>
             <!-- term name header -->
-            <div class="collapsible-header">
+            <div class="collapsible-header black light-green-text text-accent-3">
                 <i class="fa-solid fa-charging-station"></i></i>
                 <strong>{{ term.term_name }}</strong>
             </div>
             <!-- alternative name & definition -->
-            <div class="collapsible-body">
+            <div class="collapsible-body grey darken-4 grey-text text-lighten-5">
                 <strong>{{ term.alternative_name }}</strong>
                 <p>{{ term.term_definition }}</p>
                 <strong>Category: {{ term.category_name }}</strong>
@@ -50,13 +58,13 @@
                     <!-- restricts edit and delete buttons to admins and terms created by the session user -->
                     {% if session.user|lower == "admin"|lower or session.user|lower == term.created_by|lower %}
                         <a href="{{ url_for('edit_term', term_id=term._id) }}" 
-                        class="waves-effect waves-light btn-small light-green accent-3 grey-text text-darken-4">
+                        class="waves-effect waves-light btn-small light-green accent-2 grey-text text-darken-4">
                             Edit <i class="fas fa-plug-circle-bolt right"></i>
                         </a>
                         <!-- delete button -->
                         <a href="#modal-{{ term._id }}"
                         class="btn modal-trigger waves-effect red lighten-1 grey-text text-darken-4">
-                            Delete
+                            Delete <i class="fas fa-plug-circle-xmark right"></i>
                         </a>
                         <!-- delete button end -->
 

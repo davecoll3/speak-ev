@@ -5,6 +5,53 @@ google fonts
 /* ==========
 general
 ========== */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.page-footer {
+    margin-top: 40px;
+    padding-top: 0;
+}
+
+/* ==========
+hero image card
+========== */
+.card .card-image img {
+    opacity: 70%;
+}
+
+.card-panel {
+    box-shadow: none;
+}
+
+.card .card-title {
+    background: rgba(0,0,0,0.5);
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.card .card-content {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* ==========
+categories collection
+========== */
+.collection .collection-item {
+    font-size: 20px;
+}
+
+.secondary-content {
+    margin-right: 20px;
+}
 
 /* ==========
 navbar

@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let collapsibles = document.querySelectorAll(".collapsible");
     let collapsiblesInstance = M.Collapsible.init(collapsibles);
 
+    /* tooltips initialization */
+    let tooltips = document.querySelectorAll(".tooltipped");
+    let tooltipsInstance = M.Tooltip.init(tooltips);
+
     /* modal initialization */
     let modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
