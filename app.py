@@ -109,10 +109,18 @@ def logout():
 @app.route("/add_term", methods=["GET", "POST"])
 def add_term():
     if request.method == "POST":
+        # check if term already exists in db
+        existing_term = mongo.db.terms.find_one(
+            {"term_name": request.form.get("term_name").upper()})
+
+        if existing_term:
+            flash("Sorry, this term already exists")
+            return redirect(url_for("add_term"))
+
         term = {
             "category_name": request.form.get("category_name"),
-            "term_name": request.form.get("term_name"),
-            "alternative_name": request.form.get("alternative_name"),
+            "term_name": request.form.get("term_name").upper(),
+            "alternative_name": request.form.get("alternative_name").upper(),
             "term_definition": request.form.get("term_definition"),
             "created_by": session["user"],
             "created_on": datetime.today().strftime("%d-%b-%Y")
@@ -160,8 +168,16 @@ def get_categories():
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == 'POST':
+        # check if category already exists in db
+        existing_term = mongo.db.categories.find_one(
+            {"category_name": request.form.get("category_name").upper()})
+
+        if existing_term:
+            flash("Sorry, this category already exists")
+            return redirect(url_for("get_categories"))
+
         category = {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name").upper()
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")

@@ -23,9 +23,6 @@ body {
 /* ==========
 hero image card
 ========== */
-.card .card-image img {
-    opacity: 70%;
-}
 
 .card-panel {
     box-shadow: none;
