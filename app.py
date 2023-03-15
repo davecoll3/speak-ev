@@ -113,9 +113,16 @@ def add_term():
         existing_term = mongo.db.terms.find_one(
             {"term_name": request.form.get("term_name").upper()})
 
+        existing_alt_term = mongo.db.terms.find_one(
+            {"alternative_name": request.form.get("term_name").upper()})
+
         if existing_term:
             flash("Sorry, this term already exists")
-            return redirect(url_for("add_term"))
+            return redirect(url_for("get_terms"))
+
+        elif existing_alt_term:
+            flash("Sorry, this term already exists")
+            return redirect(url_for("get_terms"))
 
         term = {
             "category_name": request.form.get("category_name"),
@@ -140,7 +147,14 @@ def edit_term(term_id):
         existing_term = mongo.db.terms.find_one(
             {"term_name": request.form.get("term_name").upper()})
 
+        existing_alt_term = mongo.db.terms.find_one(
+            {"alternative_name": request.form.get("term_name").upper()})
+
         if existing_term:
+            flash("Sorry, this term already exists")
+            return redirect(url_for("get_terms"))
+
+        elif existing_alt_term:
             flash("Sorry, this term already exists")
             return redirect(url_for("get_terms"))
 
