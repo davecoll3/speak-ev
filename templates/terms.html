@@ -34,15 +34,7 @@
         </form>
     </div>
     <!-- search bar end -->
-
-    {% if terms|length > 0 %}
-        {% from 'collapsible.html' import collapsibleFunc %}
-        {{ collapsibleFunc(terms, session) }}
-    {% else %}
-        <!-- no results message -->
-        <div class="light-green accent-1">
-            <h3 class="center-align grey-text text-darken-4">No Results Found</h3>
-        </div>
-        <!-- no results message end -->
-    {% endif %}
+    
+    {{ collapsible_func(terms, session) }}
+    
 {% endblock %}
