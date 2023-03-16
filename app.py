@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_terms")
 def get_terms():
-    terms = list(mongo.db.terms.find())
+    terms = list(mongo.db.terms.find().sort("term_name", 1))
     return render_template("terms.html", terms=terms)
 
 
@@ -94,7 +94,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        terms = list(mongo.db.terms.find())
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
         return render_template("profile.html", terms=terms, username=username)
 
     return redirect(url_for("login"))
@@ -137,7 +137,6 @@ def add_term():
         flash("Term Successfully Added to Dictionary")
         return redirect(url_for("get_terms"))
 
-    terms = mongo.db.terms.find().sort("term_name", 1)
     return render_template("add_term.html", terms=terms)
 
 
