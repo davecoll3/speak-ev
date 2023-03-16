@@ -1,5 +1,3 @@
-{% from 'collapsible.html' import collapsible_func %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,18 +26,13 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_terms') }}">Home</a></li>
-                <!-- displays profile and new term menu options to registerd users -->
                 {% if session.user %}
+                <!-- displays profile, new term and log out menu options to registerd users -->
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('add_term') }}">New Term</a></li>
-                    <!-- displays manage category menu options to admins only -->
-                    {% if session.user|lower == "admin"|lower %}
-                        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                    <!-- displays log out menu option to registerd users -->
-                    {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                <!-- displays login and sign-up menu options to all users -->
                 {% else %}
+                <!-- displays login and sign-up menu options to all users -->
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
                 {% endif %}
@@ -53,15 +46,10 @@
             <li><h4 class="center-align light-green-text text-accent-3">Speak EV</h4></li>
             <li><a href="{{ url_for('get_terms') }}">Home</a></li>
             {% if session.user %}
-            <!-- displays profile and new term menu options to registerd users -->
+            <!-- displays profile, new term, and log out menu options to registerd users -->
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_term') }}">New Term</a></li>
-                {% if session.user|lower == "admin"|lower %}
-                <!-- displays manage category menu options to admins only -->
-                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                {% endif %}
-                <!-- displays log out menu option to registerd users -->
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <!-- displays login and sign-up menu options to all users -->
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -89,6 +77,11 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="to-top-btn"><i class="fa-solid fa-circle-chevron-up tooltipped"
+        data-position="left" data-tooltip="Back To Top" title="Back to top button"></i></button>
+    <!-- Back to Top Button End -->
 
     <!-- footer -->
     <footer class="page-footer lime lighten-5">

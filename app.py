@@ -54,6 +54,7 @@ def sign_up():
         session["user"] = request.form.get("username").lower()
         flash("You have successfully signed up!")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("sign-up.html")
 
 
@@ -93,8 +94,9 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
-    
+        terms = list(mongo.db.terms.find())
+        return render_template("profile.html", terms=terms, username=username)
+
     return redirect(url_for("login"))
 
 
@@ -125,7 +127,6 @@ def add_term():
             return redirect(url_for("get_terms"))
 
         term = {
-            "category_name": request.form.get("category_name"),
             "term_name": request.form.get("term_name").upper(),
             "alternative_name": request.form.get("alternative_name").upper(),
             "term_definition": request.form.get("term_definition"),
@@ -136,8 +137,8 @@ def add_term():
         flash("Term Successfully Added to Dictionary")
         return redirect(url_for("get_terms"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_term.html", categories=categories)
+    terms = mongo.db.terms.find().sort("term_name", 1)
+    return render_template("add_term.html", terms=terms)
 
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
@@ -159,7 +160,6 @@ def edit_term(term_id):
             return redirect(url_for("get_terms"))
 
         submit = {"$set": {
-            "category_name": request.form.get("category_name"),
             "term_name": request.form.get("term_name").upper(),
             "alternative_name": request.form.get("alternative_name").upper(),
             "term_definition": request.form.get("term_definition"),
@@ -170,8 +170,7 @@ def edit_term(term_id):
         flash("Term Successfully Updated on Dictionary")
 
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_term.html", term=term, categories=categories)
+    return render_template("edit_term.html", term=term)
 
 
 @app.route("/delete_term/<term_id>")
@@ -179,65 +178,6 @@ def delete_term(term_id):
     mongo.db.terms.delete_one({"_id": ObjectId(term_id)})
     flash("Term Successfully Deleted fom Dictionary")
     return redirect(url_for("get_terms"))
-
-
-@app.route("/get_categories")
-def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
-
-
-@app.route("/add_category", methods=["GET", "POST"])
-def add_category():
-    if request.method == 'POST':
-        # check if category already exists in db
-        existing_term = mongo.db.categories.find_one(
-            {"category_name": request.form.get("category_name").upper()}
-        )
-
-        if existing_term:
-            flash("Sorry, this category already exists")
-            return redirect(url_for("get_categories"))
-
-        category = {
-            "category_name": request.form.get("category_name").upper()
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New Category Added")
-        return redirect(url_for("get_categories"))
-
-    return render_template("add_category.html")
-
-
-@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
-def edit_category(category_id):
-    if request.method == "POST":
-        # check if category already exists in db
-        existing_term = mongo.db.categories.find_one(
-            {"category_name": request.form.get("category_name").upper()}
-        )
-
-        if existing_term:
-            flash("Sorry, this category already exists")
-            return redirect(url_for("get_categories"))
-
-        submit = {"$set": {
-            "category_name": request.form.get("category_name").upper()
-        }}
-        mongo.db.categories.update_one({"_id": ObjectId(category_id)}, submit)
-        flash("Category Successfully Updated")
-        return redirect(url_for("get_categories"))
-
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
-
-
-@app.route("/delete_category/<category_id>")
-def delete_category(category_id):
-    mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
-    flash("Category Successfully Deleted")
-    return redirect(url_for("get_categories"))
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

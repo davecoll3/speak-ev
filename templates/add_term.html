@@ -8,21 +8,6 @@
     <!-- add term card -->
     <div class="row card-panel grey lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('add_term') }}">
-            <!-- category selection dropdown -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix"></i>
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category_name">Term Category</label>
-                </div>
-            </div>
-            <!-- category selection dropdown end -->
-
             <!-- term name input -->
             <div class="row">
                 <div class="input-field col s12">
