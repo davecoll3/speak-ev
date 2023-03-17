@@ -1,6 +1,7 @@
 /* ==========
 google fonts
 ========== */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* ==========
 general
@@ -9,15 +10,43 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+    font-family: Rubik;
+}
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
+
+.card-panel {
+    box-shadow: none;
+    margin: 7px 0 7px 0;
+    padding: 7px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+/* From: https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework */
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #000 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
 
 /* ==========
 navbar
 ========== */
+.brand-logo {
+    margin: 0 20px 0 20px;
+}
+
 .sidenav li>a {
     color: #fff;
 }
@@ -25,20 +54,31 @@ navbar
 /* ==========
 hero image card
 ========== */
-
-.card-panel {
-    box-shadow: none;
+.hero-container {
+    width: 80%;
 }
 
-.card .card-title {
-    background: rgba(0,0,0,0.5);
-    font-size: 80px;
+.text-block h1 {
+    font-size: 60px;
     font-weight: 600;
+    margin: 0;
 }
 
-.card .card-content {
+.text-block p {
     font-size: 20px;
-    text-align: center;
+    margin: 4px;
+}
+
+/* ==========
+search box
+========== */
+.search-panel {
+    margin: 15px;
+    padding: 5px;
+}
+
+.search-panel .search-input {
+    margin: 0;
 }
 
 /* ==========
@@ -62,8 +102,34 @@ categories collection
 /* ==========
 buttons
 ========== */
-.btn, .btn-small, .btn-large {
+.btn-green {
+    background-color: #76ff03;
+    color: #000;
     margin: 5px;
+}
+
+.btn-green:hover {
+    background-color: #b2ff59;
+}
+
+.btn-red {
+    background-color: #d50000;
+    color: #fff;
+    margin: 5px;
+}
+
+.btn-red:hover {
+    background-color: #ff1744;
+}
+
+.btn-grey {
+    background-color: #eeeeee;
+    color: #000;
+    margin: 5px;
+}
+
+.btn-grey:hover {
+    background-color: #fafafa;
 }
 
 /* ==========
@@ -73,8 +139,8 @@ BACK TO TOP BUTTON
   #to-top-btn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 20px; /* Place the button 30px from the right */
+    bottom: 40px; /* Place the button at the bottom of the page */
+    right: 15px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
@@ -87,9 +153,21 @@ BACK TO TOP BUTTON
   }
 
 /* ==========
+modal
+========== */
+.modal-footer {
+    text-align: center !important;
+}
+
+.modal-footer a {
+    margin: 5px !important;
+}
+
+/* ==========
 footer
 ========== */
 .page-footer {
     margin-top: 40px;
     padding-top: 0;
+    background-color: #eeeeee !important;
 }

@@ -2,7 +2,7 @@
 {% block content %}
 
     <!-- page header -->
-    <h3 class="center-align">Sign Up</h3>
+    <h1 class="center-align">Sign Up</h1>
     <!-- page header end -->
 
     <!-- sign-up card panel -->
@@ -31,27 +31,21 @@
                 </div>
                 <!-- password input end -->
 
-                <!-- submit button -->
-                <div class="row">
-                    <button type="submit" class="col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4 btn-large light-green accent-2 grey-text text-darken-4 waves-effect">
+                <!-- sign up button & log in link -->
+                <div class="row center-align">
+                    <button type="submit" class="btn btn-green waves-effect">
                         Submit <i class="fa-solid fa-bolt"></i>
                     </button>
+                    <div class="col s12">
+                        <p class="center-align">
+                            <a href="{{ url_for('login') }}" class="blue-text text-darken-3">Already signed up? Log In</a>
+                        </p>
+                    </div>
                 </div>
-                <!-- submit button end -->
+                <!-- sign up button & log in link end -->
             </div>
         </form>
     </div>
     <!-- sign-up card panel end -->
-
-    <!-- login link -->
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already signed up?
-                <a href="{{ url_for('login') }}" class="blue-text text-darken-3">Log In Here</a>
-            </p>
-        </div>
-    </div>
-    <!-- login link end -->
 
 {% endblock %}

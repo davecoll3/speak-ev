@@ -120,11 +120,11 @@ def add_term():
 
         if existing_term:
             flash("Sorry, this term already exists")
-            return redirect(url_for("get_terms"))
+            return redirect(url_for("add_term"))
 
         elif existing_alt_term:
             flash("Sorry, this term already exists")
-            return redirect(url_for("get_terms"))
+            return redirect(url_for("add_term"))
 
         term = {
             "term_name": request.form.get("term_name").upper(),
@@ -137,7 +137,7 @@ def add_term():
         flash("Term Successfully Added to Dictionary")
         return redirect(url_for("get_terms"))
 
-    return render_template("add_term.html", terms=terms)
+    return render_template("add_term.html",)
 
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])

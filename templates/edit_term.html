@@ -2,7 +2,7 @@
 {% block content %}
 
     <!-- page header -->
-    <h3 class="center-align">Edit Term</h3>
+    <h1 class="center-align">Edit Term</h1>
     <!-- page header end -->
 
     <!-- edit term card -->
@@ -44,23 +44,18 @@
             </div>
             <!-- definition text area end -->
 
-            <!-- buttons div -->
+            <!-- cancel and edit buttons -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <!-- cancel button -->
-                    <a href="{{ url_for('get_terms') }}" class="waves-effect waves-light btn-large red lighten-1 grey-text text-darken-4">
-                        Cancel <i class="fas fa-plug-circle-xmark right"></i>
-                    </a>
-                    <!-- cancel button end -->
-
-                    <!-- edit button -->
-                    <button type="submit" class="waves-effect btn-large light-green accent-3 grey-text text-darken-4">
+                    <button type="submit" class="btn btn-green waves-effect">
                         Edit Term <i class="fas fa-plug-circle-bolt right"></i>
                     </button>
-                    <!-- edit button end -->
+                    <a href="{{ url_for('get_terms') }}" class="btn btn-red waves-effect">
+                        Cancel <i class="fas fa-plug-circle-xmark right"></i>
+                    </a>
                 </div>
             </div>
-            <!-- buttons div end -->
+            <!-- cancel and edit buttons end -->
         </form>
     </div>
     <!-- edit term card end -->
