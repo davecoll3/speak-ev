@@ -20,10 +20,10 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="navbar-fixed grey darken-4">
+        <nav class="navbar-fixed">
             <div class="nav-wrapper">
-            <a href="{{ url_for('get_terms') }}" class="brand-logo light-green-text text-accent-3">Speak EV</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <a href="{{ url_for('get_terms') }}" class="brand-logo">Speak EV</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa-solid fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_terms') }}">Home</a></li>
                 {% if session.user %}
@@ -42,8 +42,8 @@
         <!-- top navbar end -->
           
         <!-- mobile sidenav -->
-        <ul class="sidenav grey darken-4 blue-grey-text text-lighten-5" id="mobile-demo">
-            <li><h4 class="center-align light-green-text text-accent-3">Speak EV</h4></li>
+        <ul class="sidenav grey darken-4" id="mobile-demo">
+            <li><h2 class="center-align">Speak EV</h2></li>
             <li><a href="{{ url_for('get_terms') }}">Home</a></li>
             {% if session.user %}
             <!-- displays profile, new term, and log out menu options to registerd users -->
@@ -86,15 +86,14 @@
     <!-- footer -->
     <footer class="page-footer">
         <div class="footer-copyright">
-          <div class="container center-align grey-text text-darken-4">
+          <div class="container center-align">
           © 2023 Speak EV
           </div>
         </div>
     </footer>
     <!-- footer end -->
 
-    <!-- javascript and jquery links -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- javascript links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <!-- javascript and jquery links -->

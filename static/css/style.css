@@ -3,6 +3,7 @@ google fonts
 ========== */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
+
 /* ==========
 general
 ========== */
@@ -28,28 +29,39 @@ h1 {
     font-weight: 500;
 }
 
-/* From: https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework */
-/* label focus color */
-.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
-    color: #000 !important;
+.link-text a {
+    color: #212121 !important;
+    font-size: 15px !important;
 }
 
-/* label underline focus color */
-.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #000 !important;
-    box-shadow: 0 1px 0 0 #000 !important;
+.link-text a:hover {
+    font-size: 16px !important;
 }
 
 /* ==========
 navbar
 ========== */
+.navbar-fixed {
+    background-color: #000;
+}
+
 .brand-logo {
     margin: 0 20px 0 20px;
+    color: #76ff03 !important;
+}
+
+.sidenav {
+    color: #76ff03 !important;
 }
 
 .sidenav li>a {
     color: #fff;
 }
+
+.sidenav h2 {
+    font-size: 30px;
+}
+
 
 /* ==========
 hero image card
@@ -69,6 +81,7 @@ hero image card
     margin: 4px;
 }
 
+
 /* ==========
 search box
 ========== */
@@ -81,12 +94,54 @@ search box
     margin: 0;
 }
 
+
+/* ==========
+input fields
+========== */
+
+/***************************************************************************************
+*    Title: Change color of underline input and label in Materialize.css framework
+*    Author: dippas
+*    Date: 10 May 2016
+*    Availability: https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework
+***************************************************************************************/
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #000 !important;
+}
+
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+.input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #000 !important;
+}
+
+.input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+
+
 /* ==========
 terms collapsible
 ========== */
+.collapsible-header {
+    background-color: #000;
+    color: #76ff03;
+}
+
+.collapsible-body {
+    background-color: #212121;
+    color: #fff;
+}
+
 .collapsible-header .col strong {
     margin: 5px;
 }
+
 
 /* ==========
 categories collection
@@ -98,6 +153,7 @@ categories collection
 .secondary-content {
     margin-right: 20px;
 }
+
 
 /* ==========
 buttons
@@ -132,8 +188,9 @@ buttons
     background-color: #fafafa;
 }
 
+
 /* ==========
-BACK TO TOP BUTTON
+back to top button
 ========== */
 
   #to-top-btn {
@@ -152,16 +209,35 @@ BACK TO TOP BUTTON
     font-size: 28px; /* Increase font size */
   }
 
+
 /* ==========
 modal
 ========== */
+.modal-content {
+    color: #000;
+    margin-top: 20px;
+    padding: 10px !important;
+}
+
+.modal-content h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.modal-content p {
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+}
+
 .modal-footer {
     text-align: center !important;
+    margin-bottom: 20px;
 }
 
 .modal-footer a {
     margin: 5px !important;
 }
+
 
 /* ==========
 footer
@@ -171,3 +247,43 @@ footer
     padding-top: 0;
     background-color: #eeeeee !important;
 }
+
+.footer-copyright .container {
+    color: #212121 !important;
+}
+
+/* ==========
+media queries portrait orientation
+========== */
+@media (orientation: portrait) and (max-width:339px) {
+    /* Header */
+
+  }
+  
+  @media (orientation: portrait) and (min-width: 340px) and (max-width:480px) {
+    /* Header */
+
+  }
+  
+  @media (orientation: portrait) and (min-width: 481px) and (max-width: 768px) {
+    /* Header */
+
+  }
+  
+  /* ==========
+ media queries landscape orientation
+  ========== */
+  @media (orientation: landscape) and (max-height:339px) {
+    /* Header */
+
+  }
+  
+  @media (orientation: landscape) and (min-height: 340px) and (max-height:480px) {
+    /* Header */
+
+  }
+  
+  @media (orientation: landscape) and (min-height: 481px) and (max-height: 768px) {
+    /* Header */
+
+  }
