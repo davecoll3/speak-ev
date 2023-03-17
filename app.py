@@ -19,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# get terms function to retrive all terms from the database and render on home page
 @app.route("/")
 @app.route("/get_terms")
 def get_terms():
@@ -26,6 +27,7 @@ def get_terms():
     return render_template("terms.html", terms=terms)
 
 
+# search function to search the terms database
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -33,10 +35,11 @@ def search():
     return render_template("terms.html", terms=terms)
 
 
+# sign up function to add new users to the database
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
-        # check if username already exists in the db
+        # check if username already exists in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -58,10 +61,11 @@ def sign_up():
     return render_template("sign-up.html")
 
 
+# login function to find user's username and password on the database
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        # check if username exists in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -87,6 +91,7 @@ def login():
     return render_template("login.html")
 
 
+# profile function to find session user's username
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # take the session user's username from the database
@@ -100,21 +105,23 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# logout function to end user's session and delete session cookie
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
 
+# add term function add new terms to dictionary
 @app.route("/add_term", methods=["GET", "POST"])
 def add_term():
     if request.method == "POST":
-        # check if term already exists in db
+        # check if term already exists in database
         existing_term = mongo.db.terms.find_one(
             {"term_name": request.form.get("term_name").upper()})
 
+        # check if term already exists as an alternative_name in database
         existing_alt_term = mongo.db.terms.find_one(
             {"alternative_name": request.form.get("term_name").upper()})
 
@@ -140,13 +147,15 @@ def add_term():
     return render_template("add_term.html",)
 
 
+# edit term function find and edit an existing term on the dictionary
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
     if request.method == "POST":
-        # check if term already exists in db
+        # check if term already exists in the database
         existing_term = mongo.db.terms.find_one(
             {"term_name": request.form.get("term_name").upper()})
 
+        # check if term already exists as an alternative_name in the database
         existing_alt_term = mongo.db.terms.find_one(
             {"alternative_name": request.form.get("term_name").upper()})
 
@@ -172,6 +181,7 @@ def edit_term(term_id):
     return render_template("edit_term.html", term=term)
 
 
+# delete term function to delete a term from the database
 @app.route("/delete_term/<term_id>")
 def delete_term(term_id):
     mongo.db.terms.delete_one({"_id": ObjectId(term_id)})
