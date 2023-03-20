@@ -3,7 +3,6 @@ google fonts
 ========== */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
-
 /* ==========
 general
 ========== */
@@ -11,7 +10,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family: Rubik;
+    font-family: Rubik, sans-serif;
 }
 
 main {
@@ -62,7 +61,6 @@ navbar
     font-size: 30px;
 }
 
-
 /* ==========
 hero image container
 ========== */
@@ -81,7 +79,6 @@ hero image container
     margin: 4px;
 }
 
-
 /* ==========
 search box
 ========== */
@@ -93,7 +90,6 @@ search box
 .search-panel .search-input {
     margin: 0;
 }
-
 
 /* ==========
 input fields
@@ -109,8 +105,8 @@ input fields
 }
 
 .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #000 !important;
-    box-shadow: 0 1px 0 0 #000 !important;
+    border-bottom: 1px solid #64dd17 !important;
+    box-shadow: 0 1px 0 0 #64dd17 !important;
 }
 
 .input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
@@ -118,10 +114,13 @@ input fields
 }
 
 .input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #000 !important;
-    box-shadow: 0 1px 0 0 #000 !important;
+    border-bottom: 1px solid #64dd17 !important;
+    box-shadow: 0 1px 0 0 #64dd17 !important;
 }
 
+.input-field .prefix.active {
+    color: #000 !important;
+}
 
 /* ==========
 terms collapsible
@@ -143,7 +142,6 @@ terms collapsible
 .collapsible em {
     color: #bdbdbd;
 }
-
 
 /* ==========
 buttons
@@ -178,7 +176,6 @@ buttons
     background-color: #fafafa;
 }
 
-
 /* ==========
 back to top button
 ========== */
@@ -196,7 +193,6 @@ back to top button
     padding: 15px;
     font-size: 30px;
   }
-
 
 /* ==========
 modal
@@ -235,7 +231,6 @@ modal
     display: none;
 }
 
-
 /* ==========
 footer
 ========== */
@@ -248,7 +243,6 @@ footer
 .footer-copyright .container {
     color: #212121;
 }
-
 
 /* ==========
 media queries portrait orientation
@@ -432,7 +426,6 @@ media queries portrait orientation
         right: 0;
     }
 }
-
 
 /* ==========
  media queries landscape orientation
