@@ -216,7 +216,6 @@ modal
 .modal-footer {
     text-align: center !important;
     margin-bottom: 20px;
-
 }
 
 .modal-footer a {
@@ -240,8 +239,19 @@ footer
     background-color: #eeeeee;
 }
 
-.footer-copyright .container {
-    color: #212121;
+.page-footer p {
+    color: #212121ß;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.page-footer a, .page-footer p, .page-footer i {
+    font-size: 14px;
+    color: #212121!important;
+}
+
+.page-footer a:hover {
+    color: #1565c0 !important;
 }
 
 /* ==========
