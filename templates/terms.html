@@ -5,9 +5,21 @@
         <img class="responsive-img" src="/static/images/leaf.jpg">
         <div class="text-block">
             <h1>Do You Speak EV?</h1>
-            <p>Jargon busting explanations for common electric vehicle terms.</p>
-            <a href="{{ url_for('sign_up') }}">Sign-up if you have something to add.</a>
+            <p>Jargon busting explanations, for common electric vehicle terms, supplied by you the user.</p>
         </div>
+        {% if session.user %}
+            <div>
+                <p class="center-align link-text">
+                    <a href="{{ url_for('add_term') }}">Got someting to add? Insert a new term here.</a>
+                </p>
+            </div>
+        {% else %}
+            <div>
+                <p class="center-align link-text">
+                    <a href="{{ url_for('sign_up') }}">Got someting to add? Sign Up here.</a>
+                </p>
+            </div>
+        {% endif %}
     </div>
     <!-- main heading card end -->
 
@@ -15,7 +27,7 @@
     <div class="col card-panel search-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <!-- search input -->
-            <div class="search-input input-field col s12 m12">
+            <div class="search-input input-field col">
                 <i class="fa-solid fa-search prefix"></i>
                 <input type="text" name="query" id="query" minlength="2" class="validate" required>
                 <label for="query">Search</label>

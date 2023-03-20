@@ -30,12 +30,12 @@ h1 {
 }
 
 .link-text a {
-    color: #212121 !important;
-    font-size: 15px !important;
+    color: #1565c0;
+    font-size: 15px;
 }
 
 .link-text a:hover {
-    font-size: 16px !important;
+    color: #1a237e;
 }
 
 /* ==========
@@ -64,7 +64,7 @@ navbar
 
 
 /* ==========
-hero image card
+hero image container
 ========== */
 .hero-container {
     width: 80%;
@@ -98,7 +98,6 @@ search box
 /* ==========
 input fields
 ========== */
-
 /***************************************************************************************
 *    Title: Change color of underline input and label in Materialize.css framework
 *    Author: dippas
@@ -124,7 +123,6 @@ input fields
 }
 
 
-
 /* ==========
 terms collapsible
 ========== */
@@ -142,16 +140,8 @@ terms collapsible
     margin: 5px;
 }
 
-
-/* ==========
-categories collection
-========== */
-.collection .collection-item {
-    font-size: 20px;
-}
-
-.secondary-content {
-    margin-right: 20px;
+.collapsible em {
+    color: #bdbdbd;
 }
 
 
@@ -192,21 +182,19 @@ buttons
 /* ==========
 back to top button
 ========== */
-
   #to-top-btn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 40px; /* Place the button at the bottom of the page */
-    right: 15px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 15px;
+    z-index: 99;
+    border: none;
+    outline: none;
     color: hsla(0, 0%, 83%,.9);
     background: none;
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 28px; /* Increase font size */
+    cursor: pointer;
+    padding: 15px;
+    font-size: 30px;
   }
 
 
@@ -232,10 +220,19 @@ modal
 .modal-footer {
     text-align: center !important;
     margin-bottom: 20px;
+
 }
 
 .modal-footer a {
     margin: 5px !important;
+}
+
+.modal-footer .btn {
+    display: inline-block !important;
+}
+
+.modal-footer .btn-small {
+    display: none;
 }
 
 
@@ -245,45 +242,310 @@ footer
 .page-footer {
     margin-top: 40px;
     padding-top: 0;
-    background-color: #eeeeee !important;
+    background-color: #eeeeee;
 }
 
 .footer-copyright .container {
-    color: #212121 !important;
+    color: #212121;
 }
+
 
 /* ==========
 media queries portrait orientation
 ========== */
 @media (orientation: portrait) and (max-width:339px) {
-    /* Header */
+    /* General */
+    .container {
+        width: 98%;
+    }
 
-  }
-  
-  @media (orientation: portrait) and (min-width: 340px) and (max-width:480px) {
-    /* Header */
+    h1 {
+        font-size: 30px;
+        margin: 20px 6px 20px 6px;
+    }
+    
+    .link-text a {
+        font-size: 13px;
+        padding: 0 4px 0 4px;
+    }
 
-  }
-  
-  @media (orientation: portrait) and (min-width: 481px) and (max-width: 768px) {
-    /* Header */
+    .flashes {
+        margin: 0;
+    }
 
-  }
+    .flashes p {
+        margin: 10px 4px 10px 4px;
+    }
+
+    /* navbar */
+    .brand-logo {
+        font-size: 20px !important;
+    }
+
+    .sidenav h2 {
+        font-size: 20px;
+    }
+
+    /* hero image container */
+    .hero-container {
+        width: 100%;
+    }
+
+    .text-block h1 {
+        font-size: 30px;
+    }
+
+    .text-block p {
+        font-size: 15px;
+        margin: 4px 8px 4px 8px;
+    }
+
+    /* search box */
+    .search-panel {
+        margin: 5px 10px 5px 10px;
+    }
+
+    /* back to top button */
+    #to-top-btn {
+        right: 0;
+        font-size: 20px;
+    }
+
+    /* modal */
+    .modal-content h2 {
+        font-size: 25px;
+    }
+    
+    .modal-content p {
+        font-size: 13px;
+    }
+
+    .modal-footer .btn {
+        display: none;
+    }
+
+    .modal-footer .btn-small {
+        display: inline-block;
+    }
+
+    .modal-footer i {
+        display: none;
+    }
+}
   
-  /* ==========
+@media (orientation: portrait) and (min-width: 340px) and (max-width:480px) {
+    /* General */
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+    }
+    
+    .link-text a {
+        font-size: 14px;
+    }
+
+    .flashes {
+        margin: 0;
+    }
+
+    .flashes p {
+        margin: 10px 4px 10px 4px;
+    }
+
+    /* navbar */
+    .brand-logo {
+        font-size: 25px !important;
+    }
+
+    .sidenav h2 {
+        font-size: 25px;
+    }
+
+    /* hero image container */
+    .hero-container {
+        width: 100%;
+    }
+
+    .text-block h1 {
+        font-size: 38px !important;
+    }
+
+    .text-block p {
+        font-size: 15px;
+        margin: 4px 8px 4px 8px;
+    }
+
+    /* search box */
+    .search-panel {
+        margin: 5px 10px 5px 10px;
+    }
+
+    /* back to top button */
+    #to-top-btn {
+        right: 0;
+        font-size: 25px;
+    }
+
+    /* modal */
+    .modal-content h2 {
+        font-size: 28px;
+    }
+
+    .modal-footer .btn {
+        display: none;
+    }
+
+    .modal-footer .btn-small {
+        display: inline-block;
+    }
+
+    .modal-footer i {
+        display: none;
+    }
+}
+  
+@media (orientation: portrait) and (min-width: 481px) and (max-width: 768px) {
+    /* General */
+    h1 {
+    margin: 20px 0 20px 0;
+    }
+
+    .flashes {
+        margin: 0;
+    }
+
+    .flashes p {
+        margin: 10px 4px 10px 4px;
+    }
+
+    /* hero image container */
+    .hero-container {
+        width: 100%;
+    }
+
+    /* back to top button */
+    #to-top-btn {
+        right: 0;
+    }
+}
+
+
+/* ==========
  media queries landscape orientation
-  ========== */
-  @media (orientation: landscape) and (max-height:339px) {
-    /* Header */
+========== */
+@media (orientation: landscape) and (max-height:339px) {
+    /* General */
+    h1 {
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+    }
 
-  }
+    .flashes {
+        margin: 0;
+    }
+
+    .flashes p {
+        margin: 10px 4px 10px 4px;
+    }
+
+    /* navbar */
+    .brand-logo {
+        font-size: 25px !important;
+    }
+
+    .sidenav h2 {
+        font-size: 25px;
+    }
+
+    /* hero image container */
+    .responsive-img {
+        display: none;
+    }
+
+    .text-block h1 {
+        font-size: 50px !important;
+        margin: 20px 0 20px 0;
+    }
+
+    .text-block p {
+        font-size: 18px;
+    }
+
+    /* back to top button */
+    #to-top-btn {
+        right: 5px;
+        font-size: 25px;
+    }
+
+    /* modal */
+    .modal-content h2 {
+        font-size: 28px;
+    }
+
+    .modal-footer .btn {
+        display: none;
+    }
+
+    .modal-footer .btn-small {
+        display: inline-block;
+    }
+}
   
-  @media (orientation: landscape) and (min-height: 340px) and (max-height:480px) {
-    /* Header */
+@media (orientation: landscape) and (min-height: 340px) and (max-height:480px) {
+    /* General */
+    h1 {
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+    }
 
-  }
+    .flashes {
+        margin: 0;
+    }
+
+    .flashes p {
+        margin: 10px 4px 10px 4px;
+    }
+
+    /* hero image container */
+    .responsive-img {
+        display: none;
+    }
+
+    .text-block h1 {
+        font-size: 50px !important;
+        margin: 20px 0 20px 0;
+    }
+
+    /* back to top button */
+    #to-top-btn {
+        right: 5px;
+    }
+
+    /* modal */
+    .modal-footer .btn {
+        display: none;
+    }
+
+    .modal-footer .btn-small {
+        display: inline-block;
+    }
+}
   
-  @media (orientation: landscape) and (min-height: 481px) and (max-height: 768px) {
-    /* Header */
+@media (orientation: landscape) and (min-height: 481px) and (max-height: 768px) {
+    /* General */
+    h1 {
+        margin: 20px 0 20px 0;
+    }
 
-  }
+    .flashes {
+        margin: 0;
+    }
+
+    .flashes p {
+        margin: 10px 4px 10px 4px;
+    }
+}
