@@ -10,7 +10,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family: Rubik, sans-serif;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -94,6 +94,10 @@ search box
 /* ==========
 input fields
 ========== */
+.input-field label {
+    color: #595959 !important;
+}
+
 /***************************************************************************************
 *    Title: Change color of underline input and label in Materialize.css framework
 *    Author: dippas

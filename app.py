@@ -19,7 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# get terms function to retrive all terms from the database and render on home page
+# get terms function retrives all terms from the database & render on home page
 @app.route("/")
 @app.route("/get_terms")
 def get_terms():
@@ -61,7 +61,7 @@ def sign_up():
     return render_template("sign-up.html")
 
 
-# login function to find user's username and password on the database
+# login function to find user's username & password on the database
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -71,19 +71,19 @@ def login():
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(	
-                existing_user["password"], request.form.get("password")):	
-                    session["user"] = request.form.get("username").lower()	
-                    flash("Welcome {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
-        else: 
+        else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
@@ -105,7 +105,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-# logout function to end user's session and delete session cookie
+# logout function to end user's session & delete session cookie
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
@@ -147,7 +147,7 @@ def add_term():
     return render_template("add_term.html",)
 
 
-# edit term function find and edit an existing term on the dictionary
+# edit term function find & edit an existing term on the dictionary
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
     if request.method == "POST":
@@ -187,6 +187,7 @@ def delete_term(term_id):
     mongo.db.terms.delete_one({"_id": ObjectId(term_id)})
     flash("Term Successfully Deleted fom Dictionary")
     return redirect(url_for("get_terms"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
