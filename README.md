@@ -179,7 +179,9 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri)
     * The W3C CSS Validation Service was used to validate the css code.
   * [JSHint](https://jshint.com/)
-    * The JSHint static code analysis tool was used to check if the JavaScript source code complies with coding rules. 
+    * The JSHint static code analysis tool was used to check if the JavaScript source code complies with coding rules.
+  * [CI Python Linter](https://pep8ci.herokuapp.com/)
+    * The Code Institute Python Linter ensures that the code is PEP8 compliant.
   * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
     * Lighthouse was used to audit performance, accessibility, best practices and SEO across the website.
   * [a11y](https://color.a11y.com/)
