@@ -30,7 +30,7 @@ back to top button functionallity
 code sourced from w3schools: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 when user scrolls down 70px from the top of the document, display back to top button
 */
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction();};
 
 function scrollFunction() {
   if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {

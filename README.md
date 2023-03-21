@@ -159,19 +159,19 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * The navigation menu will collapse into a burger icon on mobile screens allowing for a more user friendly and aesthetically pleasing experience.
   * When used on a mobile device a side navigation menu expands on the right hand side of the screen, displaying all options available on the desktop navigation bar.
 
-    ![Navbar: Desktop](/readme-files/images/navbar.png)
+    ![Navbar: Desktop](/readme-files/images/feature-navbar.png)
 
     <details>
     <summary>Navbar: Mobile</summary>
 
-    ![Navbar: Mobile](/readme-files/images/mobile-navbar.png)
+    ![Navbar: Mobile](/readme-files/images/feature-mobile-navbar.png)
 
     </details>
     
     <details>
     <summary>Sidenav: Mobile</summary>
 
-    ![Sidenav: Mobile](/readme-files/images/mobile-sidenav.png)
+    ![Sidenav: Mobile](/readme-files/images/feature-mobile-sidenav.png)
 
     </details>
 
@@ -179,67 +179,85 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
   * An image of a Nissa Leaf EV charging is used as a hero image on the homepage. It is an iconic vechile in the world of electric vehicles and was an obvious choice for visually demonstrating to the user that the site is related to EVs.
 
-    ![Hero Image](/readme-files/images/hero-image.png)
+    ![Hero Image](/readme-files/images/feature-hero-image.png)
 
 * Homepage: Header
 
-  * The header consists 
+  * The homepage header contains a 'h1' element, with a tagline for the site, which is followed by a line of text that provides a simple and concise description of the site's purpose. At the bottom of this section lies hyperlinked text which links to the sign-up page (for non registered users) or add term page (for registered users).
 
-    ![Homepage: Header](/readme-files/images/homepage-header.png)
+    ![Homepage: Header](/readme-files/images/feature-homepage-header.png)
 
 * Search Panel
 
-  * The search panel consists 
+  * The search panel consists a text-input field, where users can type their search word, which is followed by a 'search' and 'reset' buttons. The text-input field is labeled, to indicate its purpose, and provides feedback to the user to ensure that they cannot submit an empty string. Search words can be submitted by an enter keypress or by clicking/pressing on the 'search' button and reset by clicking/pressing on the 'reset' button. 
 
-    ![Search Panel](/readme-files/images/search-panel.png)
+    ![Search Panel](/readme-files/images/feature-search-panel.png)
 
 * Homepage: Collapsible
 
-  * The 
+  * The collapsible/accordian is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term, if any. When a user clicks/touches a row on the collapsible, it reveals the term definition and a subsiquent click/touch hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hiden. Additionally, the site admin will have access to two further buttons within the open collapsible, allowing them to edit and delete terms; registered users will only have these buttons shown for their own terms. These 'edit' and 'delete' buttons link to the edit term page and a delete term modal respectively.
 
-    ![Homepage: Collapsible](/readme-files/images/homepage-collapsible.png)
+    ![Homepage: Collapsible](/readme-files/images/feature-homepage-collapsible.png)
 
 * Profile: Header
 
-  * The 
+  * The profile header contains a 'h1' element, consiting of the user's name, which is followed by an 'add term' button which links to the add term page.
 
-    ![Profile: Header](/readme-files/images/profile-header.png)
+    ![Profile: Header](/readme-files/images/feature-profile-header.png)
 
 * Profile: Collapsible
 
-  * The 
+  * The collapsible/accordian is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term. Additionally, 'edit' and 'delete' buttons are available to the user which link to the edit term page and a delete term modal respectively. On the profile page, the terms listed are just those created by the session user. When a user clicks/touches a row on the collapsible, it reveals the term definition and a subsiquent click/touch hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hiden.
 
-    ![Profile: Collapsible](/readme-files/images/profile-collapsible.png)
+    ![Profile: Collapsible](/readme-files/images/feature-profile-collapsible.png)
+
+* Edit Term Form
+
+  * A page header sits above the edit term form, containing a 'h1' element, it informs the user of their location within the site. The edit term form auto populates with the information pertaining to the selected term. This information can be updated and submitted using the 'edit term' button. If the changes are valid, a flash message will appear at the top of the screen notifying them that the term has been successfully updated. Should the edited term match an existing term, or alternative name for a term, they will be redirected to the homepage and they will receive a flash message notifying them that the term already exists within the dictionary.
+
+    ![Edit Term Form](/readme-files/images/feature-edit-term.png)
+
+* Delete Term Modal
+
+  * Should the user, or admin, select the 'delete' button, within the collapsible, a modal will appear. The main modal text will ask the user if they are sure that they want to delete the slected term. Beneath this, is text stating that this action cannot be undone. A 'cancel' and a 'delete' button sit underneath the modal text with the former used to close the modal, without deleting the term, and the latter to confirm deletion. Should the deletion of the term be confimed, they will be redirected to the homepage and a flash message will appear notifying the user that the term has been successfully deleted.
+
+    ![Delete Term Modal](/readme-files/images/feature-modal.png)
 
 * Add Term Form
 
-  * The 
+  * A page header sits above the add term form, containing a 'h1' element, it informs the user of their location within the site. The add term form consists of two mandatord text-fields ('Term Name or Acronym' and 'Term Definition') and an optional text-field ('Alt Name'). The text-input fields are labeled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. A complete form can be submitted using the 'add term' button. If the term name is valid, they will be redirected to the homepage and a flash message will appear at the top of the screen notifying them that the term has been successfully added to the dictionary. Should the new term match an existing term, or alternative name for a term, the add term form will reset to its default state and they will receive a flash message notifying them that the term already exists within the dictionary.
 
-    ![Add Term Form](/readme-files/images/add-term-form.png)
+    ![Add Term Form](/readme-files/images/feature-add-term-form.png)
 
-* Log-In Inputs and Buttons
+* Log-In Page
 
-  * The 
+  * A page header sits at the top of the page containing a 'h1' element, it informs the user of their location within the site. The header is followed by two text-input fields for the user's 'username' and 'password' with a 'log in' button underneath. At the bottom of this section lies hyperlinked text which links to the log-in page, should the user be unregistered. The input fields are labeled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. If the user details are valid, they will be redirected to the profile page and a flash message will appear at the top of the screen welcoming them. Should invalid user details be submitted, the user will receive a flash message notifying them of an incorrect username and/or password.
 
-    ![Log In](/readme-files/images/login-page.png)
+    ![Log In](/readme-files/images/feature-login-page.png)
 
-* Sign-Up Inputs and Buttons
+* Sign-Up Page
 
-  * The 
+  * A page header sits at the top of the page containing a 'h1' element, it informs the user of their location within the site. The header is followed by two text-input fields for the user's desired 'username' and 'password' with a 'sign up' button underneath. At the bottom of this section lies hyperlinked text which links to the sign-in page, should the user already be registered. The input fields are labeled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. If the user details are valid, they will be redirected to the profile page and a flash message will appear at the top of the screen notifying them that they have successfully signed up. Should the user's desired username already exist, they will receive a flash message notifying them that the username already exists. 
 
-    ![Log In](/readme-files/images/sign-up-page.png)
+    ![Log In](/readme-files/images/feature-sign-up-page.png)
 
 * Flash Message
 
-  * The...
+  * The flash messages consist of simple black text highlighted by a green background. The flash messages provide useful information/feedback to users and are located directly under the navbar for maximum visibility.
 
-    ![Footer](/readme-files/images/flash-msg.png)
+    ![Footer](/readme-files/images/feature-flash-msg.png)
+
+* Back to Top Button
+
+  * A floating back to top button was used to allow the user an easy means of returning to the nav bar, this is especially important for mobile devices where the content is stretched vertically. The button appears when users scroll 70px from the top of the page.
+
+    ![Back-to-Top Btn](/readme-files/images/feature-back-to-top-btn.png)
 
 * Footer
 
-  * The footer consists of...
+  * The footer consists of copyright information and a mailto link which users can use to contact the site owner.
 
-    ![Footer](/readme-files/images/footer.png)
+    ![Footer](/readme-files/images/feature-footer.png)
 
 
 ## Features to be Implemented in Future
@@ -256,16 +274,24 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [HTML](https://en.wikipedia.org/wiki/HTML)
   * [CSS](https://en.wikipedia.org/wiki/CSS)
   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+  * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+## Framework
+  * [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
 
 ## Database
-    [MongoDB](#)
+  * [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
 
-## Frameworks and Libraries
+## Application Platform
+  * [Heroku](https://en.wikipedia.org/wiki/Heroku)
 
-  * [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-    * Bootstrap v5.2.3 was used to form the user input section of the site, namely to provide the text input and button elements.
+## Libraries
+  * [Materialize](https://materializecss.com/)
+    * Materialize was used to form the basic structure and visual design for the site.
+  * [Font Awesome](https://fontawesome.com/)
+    * Font Awesome was used to locate and import icons used throughout the site.
   * [Google Fonts](https://fonts.google.com/)
-    * Google Fonts was used to import the 'Barlow' font used throughout the site.
+    * Google Fonts was used to import the 'Rubik' font used throughout the site.
 
 ## Testing and Validation Tools
   * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
@@ -302,31 +328,53 @@ Testing information can be found in the [testing file][TESTING.md].
 ## HTML
 The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
 
-<details><summary>HTML Validation</summary>
-<img src="readme-files/images/w3c-html.png" alt="Validation of website html code">
+<details><summary>Home</summary>
+<img src="readme-files/images/html-validation-homepage.png" alt="Validation of the Home page">
+</details>
+
+<details><summary>Profile</summary>
+<img src="readme-files/images/html-validation-profile.png" alt="Validation of the My Work page">
+</details>
+
+<details><summary>Add Term</summary>
+<img src="readme-files/images/html-validation-add-term.png" alt="Validation of the Gallery page">
+</details>
+
+<details><summary>Edit Term</summary>
+<img src="readme-files/images/html-validation-edit-term.png" alt="Validation of the Edit Term page">
+</details>
+
+<details><summary>Log In</summary>
+<img src="readme-files/images/html-validation-log-in.png" alt="Validation of the Log In page">
+</details>
+
+<details><summary>Sign Up</summary>
+<img src="readme-files/images/html-validation-sign-up.png" alt="Validation of the Sign Up page">
 </details>
 
 &nbsp;
 
 ## CSS
-The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code.
-No errors were found but four warnings were highlighted; as these related to the imported google fonts stylesheet and vendor extensions, they are not of any concern.
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
 
 <details><summary>CSS Validation</summary>
-<img src="readme-files/images/w3c-css.png" alt="Validation of website CSS>
-</details>
-
-<details><summary>CSS Warnings</summary>
-<img src="readme-files/images/w3c-css-warnings.png" alt="CSS validation warnings">
+<img src="readme-files/images/css-validation.png" alt="Validation of website CSS>
 </details>
 
 &nbsp;
 
 ## JavaScript
-[JSHint](https://jshint.com/) was used to check if JavaScript source code complies with coding rules. The code was successfully validated with no errors or warnings.
+[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings.
 
 <details><summary>JavaScript Validation</summary>
-<img src="readme-files/images/jshint.png" alt="Validation of website JavaScript code">
+<img src="readme-files/images/javascript-validation.png" alt="Validation of website JavaScript code">
+</details>
+
+## Python
+[CI Python Linter](https://pep8ci.herokuapp.com/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with no errors found.
+
+<details><summary>Python Linting</summary>
+<img src="readme-files/images/python-linter.png" alt="Linting of website Python code">
 </details>
 
 &nbsp;
@@ -337,7 +385,7 @@ The color contrast accessibility validator [a11y](https://color.a11y.com/) was u
 <details>
 <summary>Color Contrast Validation</summary>
 
-![Color Contrast Validation](/readme-files/images/a11l-color-contrast.png)
+![Color Contrast Validation](readme-files/images/ally-contrast-checker.png)
 </details>
 
 &nbsp;

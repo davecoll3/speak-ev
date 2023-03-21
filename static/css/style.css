@@ -198,6 +198,10 @@ back to top button
     font-size: 30px;
   }
 
+  #to-top-btn:hover {
+    color: #bdbdbd;
+  }
+
 /* ==========
 modal
 ========== */
