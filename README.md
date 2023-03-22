@@ -2,7 +2,7 @@
 
 Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles (EVs). The site allows any visiter to view the dictionary and for registered users to add their own terms to it. 
 
-The primary technologies used to form the basis of this website are the coding languages HTML, CSS, JavaScript, Python and the Flask microframework. The forementioned were used in conjunction with the document based, non-relational database, MongoDB.
+The primary technologies used to form the basis of this website are the coding languages HTML, CSS, JavaScript, Python, the Flask micro framework and template language Jinja. The forementioned were used in conjunction with the document based, non-relational database, MongoDB and deployed on Heroku.
 
 [View the live site here](https://speak-ev.herokuapp.com/)
 
@@ -290,10 +290,10 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [CSS](https://en.wikipedia.org/wiki/CSS)
   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
   * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-  * [Jinja]()
 
-## Framework
+## Frameworks
   * [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+  * [Materialize CSS](https://materializecss.com/)
 
 ## Template Engine
   * [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
@@ -309,8 +309,6 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [GitHub](https://en.wikipedia.org/wiki/GitHub)
 
 ## Libraries
-  * [Materialize](https://materializecss.com/)
-    * Materialize was used to form the basic structure and visual design for the site.
   * [Font Awesome](https://fontawesome.com/)
     * Font Awesome was used to locate and import icons used throughout the site.
   * [Google Fonts](https://fonts.google.com/)
@@ -381,7 +379,7 @@ The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
 
 <details><summary>CSS Validation</summary>
-<img src="readme-files/images/css-validation.png" alt="Validation of website CSS>
+<img src="readme-files/images/css-validation.png" alt="Validation of website CSS">
 </details>
 
 &nbsp;
