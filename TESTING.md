@@ -8,18 +8,26 @@
 
 ## Manual Testing
 
-### Header
+### Navbar
 * Expected
-  * 
+  * The navbar should be located at the top of the page and disappear when the user scrolls down the page. 
+  * The navbar should display the Speak EV logo and navigation links, maintaing good contrast with the background on all devices and screen sizes.
+  * On devices with a screen width of 992px or smaller, the navigation links should be hidden and be replaced with a burger menu icon.
+  * On devices with a screen width of 992px or smaller, all navigation links should drop down in a sidenav when the burger icon is selected.
+  * When clicked on, navigation links should bring the user to the relevant section of the website.
 
 * Testing
-  * 
+  * The navbar was tested on a laptop with a screen width of greater than 992px in order to verify that the Speak EV logo and navigation links were displayed across the top of the page.
+  * Chrome DevTools was used to simulate mobile devices and to check for reactiveness. A device with a screen width of less than 992px was emulated to ensure that the navigation menu collapsed down into a burger icon. This icon was then selected to ensure that all navigation links were revealed in a sidenav.
     <details><summary>Header Testing</summary>
       <img src="#">
     </details>
 
 * Result
-  * 
+  * The navbar responded as expected in all of the above testing.
+  * The navbar was found at the top of the page and disappeared when the user scrolled down the page.
+  * On devices with a screen width of greater than 992px, the Speak EV logo and navigation links were displayed in a row within the navbar.
+  * On devices, with a screen width of 992px or smaller, the navigation links collapsed into a burger icon. All navigation links were revealed in a sidenav when the burger icon was selected.
 
 &nbsp;
 
