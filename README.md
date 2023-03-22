@@ -268,6 +268,21 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 [Back to top &uarr;](#speak-ev)
 
+# Data Model
+
+  MongoDB was chosen as the database for this project. MongoDB is a non-relational database that has a flexible data model.
+
+  <details>
+  <summary>Speak-EVData Model</summary>
+
+  ![Data Model](readme-files/images/database-model.png)
+
+  </details>
+
+&nbsp;
+
+[Back to top &uarr;](#speak-ev)
+
 # Technologies Used
 
 ## Languages
@@ -275,15 +290,23 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [CSS](https://en.wikipedia.org/wiki/CSS)
   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
   * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+  * [Jinja]()
 
 ## Framework
   * [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+
+## Template Engine
+  * [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
 
 ## Database
   * [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
 
 ## Application Platform
   * [Heroku](https://en.wikipedia.org/wiki/Heroku)
+
+## Version Control
+  * [Git](https://en.wikipedia.org/wiki/Git)
+  * [GitHub](https://en.wikipedia.org/wiki/GitHub)
 
 ## Libraries
   * [Materialize](https://materializecss.com/)
@@ -394,10 +417,120 @@ The color contrast accessibility validator [a11y](https://color.a11y.com/) was u
 
 # Deployment
 
-The site was deployed... The steps to deploy are as follows:
-  1. Log in to... 
+## Creating a Gitpod Repository
 
-The live link can be found [here](#)
+A GitHub repository is used to store your project, with Git and GitHub used for version control. The following steps outline how to create a GitHub repository.
+  1. Log in to GitHub.
+  2. In the upper-right corner of any page, use the '+' drop-down menu and select 'New repository'.
+  3. Give your repo a short, memorable name.
+  4. Choose your repository visibility; 'Public' or 'Private'.
+  5. Select Initialize this repository with a README.
+  6. Click Create repository.
+
+&nbsp;
+
+## Forking the GitHub Repository
+
+Forking the GitHub Repository makes a copy of the original repository on our GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
+  1. Log in to GitHub and locate the repository: [magic-8-ball](https://github.com/davecoll3/speak-ev).
+  2. Once in the repository, navigate to the "Fork" button at the top right of the page; just above the settings button on the menu.
+  3. You should now have a copy of the original repository in your GitHub account.
+
+&nbsp;
+
+## Making a Local Clone
+  1. Log in to GitHub and locate the repository: [magic-8-ball](https://github.com/davecoll3/speak-ev).
+  2. Under the repository name, click "Clone or download".
+  3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+  4. Open Git Bash
+  5. Change the current working directory to the location where you want the cloned directory to be made.
+  6. Type `git clone` and then paste the URL you copied in Step 3.
+  ```
+  $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+  ```
+
+  7. Press Enter. Your local clone will be created.
+
+  ```
+  $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+  > Cloning into `CI-Clone`...
+  > remote: Counting objects: 10, done.
+  > remote: Compressing objects: 100% (8/8), done.
+  > remove: Total 10 (delta 1), reused 10 (delta 1)
+  > Unpacking objects: 100% (10/10), done.
+  ```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+## Heroku Deployment: Project Setup
+
+If you don't have a Heroku account, or if you have yet to install the Heroku CLI, see [How to Install the Heroku CLI](https://coding-boot-camp.github.io/full-stack/heroku/how-to-install-the-heroku-cli) before you proceed.
+
+  1. Make sure that your project is initialized as a Git repository. You can check this by running the following command at the root of your project.
+  ```
+  git status
+  ```
+
+  2. If you encounter an error, that means that your project isn't yet a Git repository. You can initialize the repository by running the following command.
+  ```
+  git init
+  ```
+
+  3. Applications that feature an Express.js back end can use Heroku's PORT environment variable. To set this up, create a port variable with a value of process.env.PORT. You can also add a default value for local instances of your server by using the || syntax.
+  ```
+  const port = process.env.PORT || 3001
+  ```
+
+## Heroku Deployment: Create a Heroku App
+
+Now that you have created the repository and configured the server, you can create an app on Heroku. Using the steps below, this can be done without opening the browser.
+  1. Create a new Heroku app by running the following command in the root of your project:
+  ```
+  heroku create
+  ```
+
+  2. The Heroku CLI will randomly generate an app name, but you can specify a name using the following syntax.
+  ```
+  heroku create <app name>
+  ```
+
+  3. Once you have created the app, you can run 'git remote -v' to verify that the Heroku remote URL was added by the Heroku CLI
+  ```
+  git remote -v
+  heroku  https://git.heroku.com/<heroku-app-name>.git (fetch)
+  heroku  https://git.heroku.com/<heroku-app-name>.git (push)
+  ```
+
+  4. The remote URL gets added automatically to your Git repository without requiring any extra commands. You can now prepare for deployment.
+
+## Heroku Deployment: Deploy to Heroku
+
+  1. Add and commit all your project files, then push to Heroku.
+  ```
+  git add -A
+  git commit -m "Pushing to Heroku"
+  git push heroku main
+  ```
+
+  2. Confirm that the application was deployed successfully by visiting the application URL provided in the terminal. Sometimes the output will say that the build was successful, but you should still open your application in the browser to verify.
+  ```
+  remote: -----> Build succeeded!
+  remote: -----> Discovering process types
+  remote:        Procfile declares types     -> (none)
+  remote:        Default types for buildpack -> web
+  remote:
+  remote: -----> Compressing...
+  remote:        Done: 33.8M
+  remote: -----> Launching...
+  remote:        Released v9
+  remote:        https://lit-retreat-65972.herokuapp.com/ deployed to Heroku
+  ```
+
+  3. Your app should now be deployed with a server to Heroku. The link will be accessible as long as your app exists on Heroku.
+
+If you encounter any issues, further details on Heroku deployment and troubleshooting can be found [here](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
+
+The live link can be found [here](https://speak-ev.herokuapp.com/)
 
 &nbsp;
 

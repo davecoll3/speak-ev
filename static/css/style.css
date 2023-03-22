@@ -247,15 +247,11 @@ footer
     background-color: #eeeeee;
 }
 
-.page-footer p {
-    color: #212121;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.page-footer a, .page-footer p, .page-footer i {
+.page-footer a, .page-footer p {
     font-size: 14px;
     color: #212121!important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .page-footer a:hover {
