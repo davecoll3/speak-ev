@@ -49,7 +49,7 @@
   * Testing
     * The hero image, header, and text were tested for responsiveness on various screen sizes and devices using Chrome DevTools.
     * Testing was carried out on emulated divices with a screen height of 480px, or smaller, to ensure that it was hidden.
-      <details><summary>Hero Image Testing</summary>
+      <details><summary>Main Heading Card Testing</summary>
         <img src="readme-files/testing/testing-hero-image.gif">
       </details>
 
@@ -99,23 +99,92 @@
   * Expected
     * The collapsible should sit directly below the the search panel and above the footer.
     * The collapsible should be responsive on all devices and screen sizes
-    * The collapsible should display only the term name when closed.
+    * The collapsible should display only the term name when closed and terms should be organized in alphabetical order.
     * The collapsible should open when selected.
     * When open, the collapsible should also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * When open, the collapsible should only display 'Edit' and 'Delete' buttons on terms created by the session user; these should appear on all terms for the admin.
+    * The 'Edit' button should link to the edit term page while the 'Delete' button should trigger a modal asking if the user is sure that they want to delete the term.
 
   * Testing
     * The collapsible was tested for responsiveness on various screen sizes and devices using Chrome DevTools.
     * Various term names were selected to ensure that the collapsible was opening and closing as expected.
+    * The admin was logged in to test if all 'Edit' and 'Delete' buttons were displaying to them. 
+    * A non-admin user was logged in to test if 'Edit' and 'Delete' buttons were displaying to them only on terms they created.
+    * The 'Edit' and 'Delete' buttons were selected to check if they triggered the expected actions.
       <details><summary>Collapsible Testing</summary>
         <img src="readme-files/testing/testing-collapsible.gif">
+      </details>
+      <details><summary>Collapsible Buttons Testing</summary>
+        <img src="readme-files/testing/testing-collapsible-btns.gif">
       </details>
 
   * Result
     * The collapsible sits directly below the the search panel and above the footer.
     * The collapsible is responsive on all devices and screen sizes
-    * The collapsible displays only the term name when closed.
+    * The collapsible displays only the term name when closed and terms are organized in alphabetical order.
     * The collapsible opens when selected.
     * When open, the collapsible also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * When open, the collapsible only displays 'Edit' and 'Delete' buttons on terms created by the session user; these on all terms for the admin.
+    * The 'Edit' button links to the edit term page while the 'Delete' button triggers a modal asking if the user is sure that they want to delete the term.
+
+&nbsp;
+
+### Profile Heading Card
+
+  * Expected
+    * The header and 'Add Term' button should sit directly below the navbar and above the collapsible.
+    * The header and 'Add Term' button should be responsive on all devices and screen sizes
+    * The header should display the users name.
+    * The 'Add Term' button should link to the add term page.
+
+  * Testing
+    * The header and 'Add Term' button were tested for responsiveness on various screen sizes and devices using Chrome DevTools.
+    * It was verified that the heading displayed the user's name.
+    * The 'Add Term' button was selected to check if it triggered the expected actions.
+      <details><summary>Profile Heading Testing</summary>
+        <img src="readme-files/testing/testing-profile-heading.gif">
+      </details>
+
+  * Result
+    * The header and 'Add Term' button sits directly below the navbar and above the collapsible.
+    * The header and 'Add Term' button is responsive on all devices and screen sizes
+    * The header displays the users name.
+    * The 'Add Term' button links to the add term page.
+
+&nbsp;
+
+### Profile Collapsible
+
+  * Expected
+    * The collapsible should sit directly below the the 'Add Term' button and above the footer.
+    * The collapsible should be responsive on all devices and screen sizes
+    * The collapsible should display only the term name when closed and terms should be organized in alphabetical order.
+    * The collapsible should open when selected.
+    * When open, the collapsible should also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * When open, the collapsible should only display 'Edit' and 'Delete' buttons on terms created by the session user; these should appear on all terms for the admin.
+    * The 'Edit' button should link to the edit term page while the 'Delete' button should trigger a modal asking if the user is sure that they want to delete the term.
+
+  * Testing
+    * The collapsible was tested for responsiveness on various screen sizes and devices using Chrome DevTools.
+    * Various term names were selected to ensure that the collapsible was opening and closing as expected.
+    * The admin was logged in to test if all 'Edit' and 'Delete' buttons were displaying to them. 
+    * A non-admin user was logged in to test if 'Edit' and 'Delete' buttons were displaying to them only on terms they created.
+    * The 'Edit' and 'Delete' buttons were selected to check if they triggered the expected actions.
+      <details><summary>Collapsible Testing</summary>
+        <img src="readme-files/testing/testing-collapsible.gif">
+      </details>
+      <details><summary>Collapsible Buttons Testing</summary>
+        <img src="readme-files/testing/testing-collapsible-btns.gif">
+      </details>
+
+  * Result
+    * The collapsible sits directly below the the search panel and above the footer.
+    * The collapsible is responsive on all devices and screen sizes
+    * The collapsible displays only the term name when closed and terms are organized in alphabetical order.
+    * The collapsible opens when selected.
+    * When open, the collapsible also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * When open, the collapsible only displays 'Edit' and 'Delete' buttons on terms created by the session user; these on all terms for the admin.
+    * The 'Edit' button links to the edit term page while the 'Delete' button triggers a modal asking if the user is sure that they want to delete the term.
 
 &nbsp;
 
@@ -198,8 +267,19 @@
 ## Lighthouse
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit performance, accessibility, best practices and SEO across the website.
 
-  * [Lighthouse Report: Desktop](#)
-  * [Lighthouse Report: Mobile](#)
+  * Desktop
+    * [Lighthouse Report: Home](readme-files/lighthouse/home-desktop.pdf)
+    * [Lighthouse Report: Profile](readme-files/lighthouse/profile-desktop.pdf)
+    * [Lighthouse Report: Add Term](readme-files/lighthouse/add-term-desktop.pdf)
+    * [Lighthouse Report: Log In](readme-files/lighthouse/log-in-desktop.pdf)
+    * [Lighthouse Report: Sign Up](readme-files/lighthouse/sign-up-desktop.pdf)
+
+  * Mobile
+    * [Lighthouse Report: Home](readme-files/lighthouse/home-mobile.pdf)
+    * [Lighthouse Report: Profile](readme-files/lighthouse/profile-mobile.pdf)
+    * [Lighthouse Report: Add Term](readme-files/lighthouse/add-term-mobile.pdf)
+    * [Lighthouse Report: Log In](readme-files/lighthouse/log-in-mobile.pdf)
+    * [Lighthouse Report: Sign Up](readme-files/lighthouse/sign-up-mobile.pdf)
 
 &nbsp;
 

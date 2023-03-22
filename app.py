@@ -151,31 +151,39 @@ def add_term():
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
     if request.method == "POST":
-        # check if term already exists in the database
-        existing_term = mongo.db.terms.find_one(
-            {"term_name": request.form.get("term_name").upper()})
+        # get term to update
+        term_to_update = mongo.db.terms.find_one(
+            {"_id": ObjectId(term_id)})
 
-        # check if term already exists as an alternative_name in the database
-        existing_alt_term = mongo.db.terms.find_one(
-            {"alternative_name": request.form.get("term_name").upper()})
+        if term_to_update['term_name'] != request.form.get(
+                                            "term_name").upper():
+            # check if term already exists in the database
+            existing_term = mongo.db.terms.find_one(
+                {"term_name": request.form.get("term_name").upper()})
 
-        if existing_term:
-            flash("Sorry, this term already exists")
-            return redirect(url_for("get_terms"))
+            # check if term already exists as an alternative_name in the db
+            existing_alt_term = mongo.db.terms.find_one(
+                {"alternative_name": request.form.get("term_name").upper()})
 
-        elif existing_alt_term:
-            flash("Sorry, this term already exists")
-            return redirect(url_for("get_terms"))
+            if existing_term:
+                flash("Sorry, this term already exists")
+                return redirect(url_for("get_terms"))
 
-        submit = {"$set": {
-            "term_name": request.form.get("term_name").upper(),
-            "alternative_name": request.form.get("alternative_name").upper(),
-            "term_definition": request.form.get("term_definition"),
-            "created_by": session["user"],
-            "created_on": datetime.today().strftime("%d-%b-%Y")
-        }}
-        mongo.db.terms.update_one({"_id": ObjectId(term_id)}, submit)
-        flash("Term Successfully Updated on Dictionary")
+            elif existing_alt_term:
+                flash("Sorry, this already term exists as an alternative name")
+                return redirect(url_for("get_terms"))
+
+        else:
+            submit = {"$set": {
+                "term_name": request.form.get("term_name").upper(),
+                "alternative_name":
+                    request.form.get("alternative_name").upper(),
+                "term_definition": request.form.get("term_definition"),
+                "created_by": session["user"],
+                "created_on": datetime.today().strftime("%d-%b-%Y")
+            }}
+            mongo.db.terms.update_one({"_id": ObjectId(term_id)}, submit)
+            flash("Term Successfully Updated on Dictionary")
 
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
     return render_template("edit_term.html", term=term)
