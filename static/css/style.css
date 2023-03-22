@@ -239,6 +239,16 @@ modal
 }
 
 /* ==========
+sign up page
+========== */
+.valid-password {
+    color: #212121;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========
 footer
 ========== */
 .page-footer {

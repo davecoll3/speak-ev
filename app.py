@@ -130,7 +130,7 @@ def add_term():
             return redirect(url_for("add_term"))
 
         elif existing_alt_term:
-            flash("Sorry, this term already exists")
+            flash("Sorry, this already term exists as an alternative name")
             return redirect(url_for("add_term"))
 
         term = {
@@ -155,7 +155,8 @@ def edit_term(term_id):
         term_to_update = mongo.db.terms.find_one(
             {"_id": ObjectId(term_id)})
 
-        if term_to_update['term_name'] != request.form.get(
+        # if updating term name
+        if term_to_update["term_name"] != request.form.get(
                                             "term_name").upper():
             # check if term already exists in the database
             existing_term = mongo.db.terms.find_one(
@@ -200,4 +201,4 @@ def delete_term(term_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)

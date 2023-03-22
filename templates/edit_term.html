@@ -15,7 +15,7 @@
                     <i class="fa-solid fa-pen-to-square prefix"></i>
                     <input id="term_name" name="term_name" minlength="2" maxlength="30"
                     value="{{ term.term_name }}" type="text" class="validate" required>
-                    <label for="term_name">Term Name or Acronym</label>
+                    <label for="term_name">Term Name or Acronym *</label>
                 </div>
             </div>
             <!-- term name input end -->
@@ -39,7 +39,7 @@
                         maxlength="500" class="materialize-textarea validate" required>
                         {{- term.term_definition -}}
                     </textarea>
-                    <label for="term_definition">Term Definition</label>
+                    <label for="term_definition">Term Definition *</label>
                 </div>
             </div>
             <!-- definition text area end -->

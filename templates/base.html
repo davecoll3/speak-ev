@@ -27,7 +27,7 @@
             <a href="{{ url_for('get_terms') }}" class="brand-logo left">Speak EV</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Open side navigation menu."><i class="fa-solid fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_terms') }}">Home</a></li>
+                <li><a  href="{{ url_for('get_terms') }}">Home</a></li>
                 {% if session.user %}
                 <!-- displays profile, new term and log out menu options to registerd users -->
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
