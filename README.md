@@ -541,22 +541,25 @@ The live link can be found [here](https://speak-ev.herokuapp.com/)
 ## Content 
 
   * The Code Institute readme-template provided the basic structure for the readme.md file.
+  * The Code Institute's Non-Relational Database Management Systems Mini Project was used to provide some basic structure and authentication.
+  * The [Materialize CSS](https://materializecss.com/) front-end framework was used to supply components such as navbar, sidenav, collapsible, and search panel.
 
 ## Media
 
-  * The favicon icon image is from... [#](#) 
+  * The favicon image was sourced from [Icons8](https://icons8.com) and was freely used under the [Icons8 licence](https://icons8.com/license).
+  * The hero-image was sourced from [Unsplash](https://unsplash.com) and was freely used under the [Unsplash licence](https://unsplash.com/license).
 
 ## Code
 
-  * The CSS code for... [#](#) 
-
-Various online tutorials were consulted to help better understand the methodology needed to create this site. These include the following:
-  * [#](#) by...
+  * The CSS code for changing the color of underline input and label in Materialize.css framework was sourced from [Stack Overflow](https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework) and is fully accredited within the code.
+  * The JavaScript code for Materialize initialization was adapted from [Materialize](https://materializecss.com/) and is fully accredited within the code.
+  * The JavaScript code for the bact to top button was adapted from [W3Schools](code adapted from w3schools: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) and is fully accredited within the code.
 
 ## Acknowledgements
 
   * I would like to thank my mentor, Oluwaseun Owonikoko, who assisted me on this project.
-  * I would also like to acknowledge the support and advice obtained from the Code Institute Slack community. 
+  * I would like to thank Iris Smok, the Code Insitiute's cohort facilitator for Coleg y Cymoedd, for her advice and encouragement.
+  * I would also like to acknowledge the support and advice obtained from the Code Institute's Tutor Support and Slack community. 
 
   &nbsp;
 

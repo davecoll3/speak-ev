@@ -98,12 +98,12 @@ input fields
     color: #595959 !important;
 }
 
-/***************************************************************************************
-*    Title: Change color of underline input and label in Materialize.css framework
-*    Author: dippas
-*    Date: 10 May 2016
-*    Availability: https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework
-***************************************************************************************/
+/*
+Title: Change color of underline input and label in Materialize.css framework
+Author: dippas
+Date: 10 May 2016
+Availability: https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework
+*/
 .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
     color: #000 !important;
 }
