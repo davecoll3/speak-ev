@@ -119,30 +119,6 @@
 
 &nbsp;
 
-### Back to Top Button
-
-  * Expected
-    * The back to top button should be found in the bottom right corner of the page and bring the user back to the top of the page when clicked on.
-    * The back to top button should be hidden until the user scrolls 70px down from the top of the page.
-    * The back to top button should be unintrusive and semi transparent.
-    * On laptops and desktops, the user should be provided with feedback when hovering over the back to top button as the color changes to a darker shade of grey, a 'Back to Top' label should also be displayed.
-
-  * Testing
-    * The back to top button was tested by scrolling down on all site pages and clicking on it to return to the top of the page; Chrome DevTools was used to simulate mobile devices.
-    * It was verified that the back to top button was hidden before appearing when scrolling down the page.
-    * It was also verified that the back to top button changed color by hovering over it with the cursor and a 'Back to Top' label is also displayed.
-      <details><summary>Back to Top Button Testing</summary>
-        <img src="readme-files/testing/testing-back-to-top-btn.gif">
-      </details>
-
-  * Result
-    * The back to top button responded as expected in all of the above testing.
-    * The back to top button is hidden until the user scrolls 70px down from the top of the page.
-    * The back to top button is present and brings the user back to the top of the page on all pages, screen sizes and devices. 
-    * On laptops and desktops, the back to top button changes color upon hovering over it with the cursor, a 'Back to Top' label is also displayed.
-
-&nbsp;
-
 ### Flash Messages
 
   * Expected
@@ -167,6 +143,30 @@
     * The flash messages appear as green text on a green background and be centrally aligned.
     * The flash messages generally appear just under the navbar but above all other page content; the exception being the 'No Results Found' flash message which is located directly below the search panel.
     * The flash messages provides relevant feedback to the user.
+
+&nbsp;
+
+### Back to Top Button
+
+  * Expected
+    * The back to top button should be found in the bottom right corner of the page and bring the user back to the top of the page when clicked on.
+    * The back to top button should be hidden until the user scrolls 70px down from the top of the page.
+    * The back to top button should be unintrusive and semi transparent.
+    * On laptops and desktops, the user should be provided with feedback when hovering over the back to top button as the color changes to a darker shade of grey, a 'Back to Top' label should also be displayed.
+
+  * Testing
+    * The back to top button was tested by scrolling down on all site pages and clicking on it to return to the top of the page; Chrome DevTools was used to simulate mobile devices.
+    * It was verified that the back to top button was hidden before appearing when scrolling down the page.
+    * It was also verified that the back to top button changed color by hovering over it with the cursor and a 'Back to Top' label is also displayed.
+      <details><summary>Back to Top Button Testing</summary>
+        <img src="readme-files/testing/testing-back-to-top-btn.gif">
+      </details>
+
+  * Result
+    * The back to top button responded as expected in all of the above testing.
+    * The back to top button is hidden until the user scrolls 70px down from the top of the page.
+    * The back to top button is present and brings the user back to the top of the page on all pages, screen sizes and devices. 
+    * On laptops and desktops, the back to top button changes color upon hovering over it with the cursor, a 'Back to Top' label is also displayed.
 
 &nbsp;
 
