@@ -130,12 +130,12 @@ Availability: https://stackoverflow.com/questions/37127123/change-color-of-under
 terms collapsible
 ========== */
 .collapsible-header {
-    background-color: #000;
+    background-color: #000 !important;
     color: #76ff03;
 }
 
 .collapsible-body {
-    background-color: #212121;
+    background-color: #212121 !important;
     color: #fff;
 }
 

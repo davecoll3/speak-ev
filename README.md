@@ -175,17 +175,15 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
     </details>
 
-* Hero Image
+* Main Heading Card
 
-  * An image of a Nissa Leaf EV charging is used as a hero image on the homepage. It is an iconic vechile in the world of electric vehicles and was an obvious choice for visually demonstrating to the user that the site is related to EVs.
+  * An image of a Nissa Leaf EV charging is used as a hero image, within the main heading card, on the homepage. It is an iconic vechile in the world of electric vehicles and was an obvious choice for visually demonstrating to the user that the site is related to EVs.
 
-    ![Hero Image](/readme-files/images/feature-hero-image.png)
+    ![Heading Card: Hero Image](/readme-files/images/feature-hero-image.png)
 
-* Homepage: Header
+  * The main heading card also contains a 'h1' element, with a tagline for the site, which is followed by a line of text that provides a simple and concise description of the site's purpose. At the bottom of this section lies hyperlinked text which links to the sign-up page (for non registered users) or add term page (for registered users).
 
-  * The homepage header contains a 'h1' element, with a tagline for the site, which is followed by a line of text that provides a simple and concise description of the site's purpose. At the bottom of this section lies hyperlinked text which links to the sign-up page (for non registered users) or add term page (for registered users).
-
-    ![Homepage: Header](/readme-files/images/feature-homepage-header.png)
+    ![Heading Card: Header and Text](/readme-files/images/feature-homepage-header.png)
 
 * Search Panel
 
