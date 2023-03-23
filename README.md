@@ -287,7 +287,13 @@ Wireframes for mobile, tablet, and desktop can be found below:
 ## Features to be Implemented in Future
 
 * Pagination
-  * As the dictionary expands, pagination would make for a better user experience as the number of terms could become tedious if displayed on one page. 
+  * As the dictionary expands, pagination would make for a better user experience as the number of terms could become tedious if displayed on one page.
+
+* Categories
+  * The addition of term categories would be useful for further dividing and organising dictionary terms. These categories could be added and updated by the site admin and would be selected from a drop-down menu when registered users are adding new terms.
+
+* Multiple Admins
+  * It would be useful to have more than the one admin that is currently allowed. The addition of a boolean value would allow for this, with a key of 'is_admin'.
 
 &nbsp;
 
