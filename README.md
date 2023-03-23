@@ -295,6 +295,9 @@ Wireframes for mobile, tablet, and desktop can be found below:
 * Multiple Admins
   * It would be useful to have more than the one admin that is currently allowed. The addition of a boolean value would allow for this, with a key of 'is_admin'.
 
+* User and Admin authentication
+  * In the future, it would be prudent to create a higher level of security and authentication regarding registered site users, and the site admin, as the current authentication is very rudimentary.
+
 &nbsp;
 
 [Back to top &uarr;](#speak-ev)
