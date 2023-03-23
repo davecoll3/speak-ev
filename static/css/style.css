@@ -44,6 +44,10 @@ navbar
     background-color: #000;
 }
 
+.navbar-fixed li:hover {
+    background-color: #212121;
+}
+
 .brand-logo {
     margin: 0 20px 0 20px;
     color: #76ff03 !important;

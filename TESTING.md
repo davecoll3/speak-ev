@@ -142,8 +142,8 @@
     * The header and 'Add Term' button were tested for responsiveness on various screen sizes and devices using Chrome DevTools.
     * It was verified that the heading displayed the user's name.
     * The 'Add Term' button was selected to check if it triggered the expected actions.
-      <details><summary>Profile Heading Testing</summary>
-        <img src="readme-files/testing/testing-profile-heading.gif">
+      <details><summary>Profile Heading Card Testing</summary>
+        <img src="readme-files/testing/testing-profile-header.gif">
       </details>
 
   * Result
@@ -204,7 +204,7 @@
     * Attempts were made to submit incomplete and partially complete forms to verify that the form would only accept a completed form with the required fields completed.
     * It was verified that the 'Add Term' button successfully added the term to the dictionary and redirects the user.
     * It was also verified that the submit 'Add Term' button changed color by hovering over it with the cursor.
-      <details><summary>Add New Form Testing</summary>
+      <details><summary>Add New Term Form Testing</summary>
         <img src="readme-files/testing/testing-add-new-form.gif">
       </details>
 
@@ -271,7 +271,7 @@
     * Attempts were made to submit incomplete and partially complete fields to verify that only valid user information is accepted.
     * It was verified that the 'Log In' button verifies valid user submissions and redirects them to their profile page.
     * It was also verified that the 'Log In' button changed color by hovering over it with the cursor.
-      <details><summary>Log In Page Testing</summary>
+      <details><summary>Sign Up Page Testing</summary>
         <img src="readme-files/testing/testing-sign-up.gif">
       </details>
 
@@ -663,8 +663,11 @@
         return render_template("terms.html", terms=terms)
   ```
 
-### Collapsible not Centering on Page
+### Collapsible Not Vertically Centering on Page
   During the testing phase, it was noted that the collapsible occasionally will display its contents below the fold when open. This means that the user has to scroll to reveal the contents and does not create a good user experience. Ideally, some JavaScript could be added to ensure that the open collapsible centres itself vertically.
+ 
+ ### Navbar Menu Items Not Active
+   Materialize allows for an active class to be added to the menu < li > elements to highlight, on the navbar, which page the user is currently on. However, due to the navbar code only appearing on the base.html file, it is not as simple to implement as is shown in the Materialize documentation and requires further jinja or JavaScript code to achieve this. In order to mitigate the effects of this, page headers are used to help signpost the current page to users.
 
 &nbsp;
 

@@ -1,6 +1,6 @@
 # Speak EV
 
-Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles (EVs). The site allows any visitor to view the dictionary and for registered users to add their own terms to it. As EVs are a new and ever developing technology, it can be hard to keep up with all of the new terms and acronyms. This is especially true for people adopting, or wishing to adopt, the technology for the first time. Speak EV aims to help demystify EV terms and jargon, making it accessible to all.
+Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles (EVs). The site allows any visitor to view the dictionary and registered users to add their own terms to it. As EVs are a new and ever developing technology, it can be hard to keep up with all of the associated terms and acronyms. This is especially true for people adopting, or wishing to adopt, the technology for the first time. Speak EV aims to help demystify EV terms and jargon, making it accessible to all.
 
 The primary technologies used to form the basis of this website are the coding languages HTML, CSS, JavaScript, Python, the Flask micro framework and template language Jinja. These were used in conjunction with the document based, non-relational database, MongoDB and deployed on Heroku.
 
@@ -70,8 +70,8 @@ Research for the creation of this site was carried out by searching for various 
   * As the site owner, I want to allow all visitors to the side to view the dictionary without the need to sign-up.
   * As the site owner, I want to allow site users to sign-up and add new terms to the dictionary.
   * As the site owner, I want to allow site users to edit and delete terms that they have previously submitted.
-  * As the site owner, I want to allow a site admin to add new terms to the site.
-  * As the site owner, I want to allow a site admin to edit and delete all terms on the site.
+  * As the site owner, I want to allow a site admin to add new terms to the dictionary.
+  * As the site owner, I want to allow a site admin to edit and delete all dictionary terms.
 
 &nbsp;
 
@@ -106,20 +106,21 @@ Research for the creation of this site was carried out by searching for various 
   * Appealing visual presentation that enhances the user experience.
   * Full CRUD functionality
     * Create: registered users can create new dictionary terms.
-    * Read: all users can read all dictionary terms and definitions.
+    * Read: all users can read dictionary terms and definitions.
     * Update: registered users can update their own entries.
     * Delete: registered users can delete their own entries.
 
 ### Expectations
 
   * Feedback when interacting with the site that is also instructive.
+  * Color choices for links and buttons should be familar and logical.
 
 &nbsp;
 
 ## Design
 
 ### Imagery
-* An image of a Nissa Leaf EV charging was chosen as a hero image for the homepage. The Nissan Leaf was the world's first mass-market battery electric vehicle (BEV) when it first arrived in 2010 and is now sold in 59 markets worldwide. It is an iconic vehicle in the world of electric vehicles and was an obvious choice for visually demonstrating to the user that the site is related to EVs.
+* An image of a Nissa Leaf EV charging was chosen as a hero image for the homepage. The Nissan Leaf was the world's first mass-market battery electric vehicle (BEV) when it arrived in 2010 and is now sold in 59 markets worldwide. It is an iconic vehicle in the world of electric vehicles and was an obvious choice for visually demonstrating to the user that the site is related to EVs.
 
 ### Color Scheme
 
@@ -159,8 +160,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 # Data Model
 
-  MongoDB was chosen as the database for this project. MongoDB is a non-relational database that has a flexible data model.
-
+  MongoDB was chosen as the database for this project. MongoDB is a non-relational database that has a flexible data model. This project has two collections, one for 'terms' and a second for 'users'. Within the collections each document has several field-value pairs, these are outlined in the data model image below. 
   <details>
   <summary>Speak-EVData Model</summary>
 
@@ -207,67 +207,67 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
     ![Heading Card: Hero Image](/readme-files/images/feature-hero-image.png)
 
-  * The main heading card also contains a 'h1' element, with a tagline for the site, which is followed by a line of text that provides a simple and concise description of the site's purpose. At the bottom of this section lies hyperlinked text which links to the sign-up page (for non registered users) or add term page (for registered users).
+  * The main heading card also contains a < h1 > element, with a tagline for the site, which is followed by a line of text that provides a simple and concise description of the site's purpose. At the bottom of this section lies hyperlinked text which links to the sign-up page (for non registered users) or add term page (for registered users).
 
     ![Heading Card: Header and Text](/readme-files/images/feature-homepage-header.png)
 
 * Search Panel
 
-  * The search panel consists of a text-input field, where users can type their search word, which is followed by a 'search' and 'reset' buttons. The text-input field is labelled, to indicate its purpose, and provides feedback to the user to ensure that they cannot submit an empty string. Search words can be submitted by an enter keypress or by clicking/pressing on the 'search' button and reset by clicking/pressing on the 'reset' button. 
+  * The search panel consists of a text-input field, where users can type their search word, which is followed by 'search' and 'reset' buttons. The text-input field is labelled, to indicate its purpose, and provides feedback to the user to ensure that they cannot submit an empty string. Search words can be submitted by an enter keypress or by selecting the 'search' button and reset by selecting the 'reset' button. 
 
     ![Search Panel](/readme-files/images/feature-search-panel.png)
 
 * Homepage: Collapsible
 
-  * The collapsible/accordion is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term, if any. When a user clicks/touches a row on the collapsible, it reveals the term definition and a subsequent click/touch hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden. Additionally, the site admin will have access to two further buttons within the open collapsible, allowing them to edit and delete terms; registered users will only have these buttons shown for their own terms. These 'edit' and 'delete' buttons link to the edit term page and a delete term modal respectively.
+  * The collapsible is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term (if any). When a user selects a row on the collapsible, it reveals the term definition and a subsequent selection hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden. Additionally, the site admin will have access to two further buttons within the open collapsible, allowing them to edit and delete terms; registered users will only have these buttons shown for their own terms. These 'Edit' and 'Delete' buttons link to the edit term page and a delete term modal respectively.
 
     ![Homepage: Collapsible](/readme-files/images/feature-homepage-collapsible.png)
 
 * Profile: Header
 
-  * The profile header contains a 'h1' element, consisting of the user's name, which is followed by an 'add term' button which links to the add term page.
+  * The profile header contains a < h1 > element, consisting of the user's name, which is followed by an 'Add Term' button which links to the add term page.
 
     ![Profile: Header](/readme-files/images/feature-profile-header.png)
 
 * Profile: Collapsible
 
-  * The collapsible/accordion is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term. Additionally, 'edit' and 'delete' buttons are available to the user which link to the edit term page and a delete term modal respectively. On the profile page, the terms listed are just those created by the session user. When a user clicks/touches a row on the collapsible, it reveals the term definition and a subsequent click/touch hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden.
+  * The collapsible is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term. Additionally, 'Edit' and 'Delete' buttons are available to the user which link to the edit term page and a delete term modal respectively. On the profile page, the terms listed are just those created by the session user. When a user selects a row on the collapsible, it reveals the term definition and a subsequent selection hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden.
 
     ![Profile: Collapsible](/readme-files/images/feature-profile-collapsible.png)
 
 * Edit Term Form
 
-  * A page header sits above the edit term form, containing a 'h1' element, it informs the user of their location within the site. The edit term form auto populates with the information pertaining to the selected term. This information can be updated and submitted using the 'edit term' button. If the changes are valid, a flash message will appear at the top of the screen notifying them that the term has been successfully updated. Should the edited term match an existing term, or alternative name for a term, they will be redirected to the homepage and they will receive a flash message notifying them that the term already exists within the dictionary.
+  * A page header sits above the edit term form, containing a < h1 > element, it informs the user of their location within the site. The edit term form auto populates with the information pertaining to the selected term. This information can be updated and submitted using the 'Edit Term' button. If the changes are valid, a flash message will appear at the top of the screen notifying them that the term has been successfully updated. Should the edited term match an existing term, or alternative name for an existing term, they will be redirected to the homepage and receive a flash message notifying them that the term, or alternative name, already exists within the dictionary.
 
     ![Edit Term Form](/readme-files/images/feature-edit-term.png)
 
 * Delete Term Modal
 
-  * Should the user, or admin, select the 'delete' button, within the collapsible, a modal will appear. The main modal text will ask the user if they are sure that they want to delete the selected term. Beneath this, is text stating that this action cannot be undone. A 'cancel' and a 'delete' button sit underneath the modal text with the former used to close the modal, without deleting the term, and the latter to confirm deletion. Should the deletion of the term be confirmed, they will be redirected to the homepage and a flash message will appear notifying the user that the term has been successfully deleted.
+  * Should the user, or admin, select the 'Delete' button, within the collapsible, a modal will appear. The main modal text will ask the user if they are sure that they want to delete the selected term. Beneath this, is text stating that this action cannot be undone. A 'Cancel' and a 'Delete' button sit in the modal footer with the former used to close the modal, without deleting the term, and the latter to confirm deletion. Should the deletion of the term be confirmed, they will be redirected to the homepage and a flash message will appear notifying the user that the term has been successfully deleted.
 
     ![Delete Term Modal](/readme-files/images/feature-modal.png)
 
 * Add Term Form
 
-  * A page header sits above the add term form, containing a 'h1' element, it informs the user of their location within the site. The add term form consists of two mandatory text-fields ('Term Name or Acronym' and 'Term Definition') and an optional text-field ('Alt Name'). The text-input fields are labelled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. A complete form can be submitted using the 'add term' button. If the term name is valid, they will be redirected to the homepage and a flash message will appear at the top of the screen notifying them that the term has been successfully added to the dictionary. Should the new term match an existing term, or alternative name for a term, the add term form will reset to its default state and they will receive a flash message notifying them that the term already exists within the dictionary.
+  * A page header sits above the add term form, containing a < h1 > element, it informs the user of their location within the site. The add term form consists of two mandatory text-fields ('Term Name or Acronym' and 'Term Definition') and an optional text-field ('Alt Name'). The text-input fields are labelled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. A complete form can be submitted using the 'add term' button. If the term name is valid, they will be redirected to the homepage and a flash message will appear at the top of the screen notifying them that the term has been successfully added to the dictionary. Should the new term match an existing term, or alternative name for a term, the add term form will reset to its default state and they will receive a flash message notifying them that the term already exists within the dictionary.
 
     ![Add Term Form](/readme-files/images/feature-add-term-form.png)
 
 * Log-In Page
 
-  * A page header sits at the top of the page containing a 'h1' element, it informs the user of their location within the site. The header is followed by two text-input fields for the user's 'username' and 'password' with a 'log in' button underneath. At the bottom of this section lies hyperlinked text which links to the log-in page, should the user be unregistered. The input fields are labelled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. If the user details are valid, they will be redirected to the profile page and a flash message will appear at the top of the screen welcoming them. Should invalid user details be submitted, the user will receive a flash message notifying them of an incorrect username and/or password.
+  * A page header sits at the top of the page containing a < h1 > element, it informs the user of their location within the site. The header is followed by two text-input fields for the user's 'username' and 'password' with a 'log in' button underneath. At the bottom of this section lies hyperlinked text which links to the log-in page, should the user be unregistered. The input fields are labelled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. If the user details are valid, they will be redirected to the profile page and a flash message will appear at the top of the screen welcoming them. Should invalid user details be submitted, the user will receive a flash message notifying them of an incorrect username and/or password.
 
     ![Log In](/readme-files/images/feature-login-page.png)
 
 * Sign-Up Page
 
-  * A page header sits at the top of the page containing a 'h1' element, it informs the user of their location within the site. The header is followed by two text-input fields for the user's desired 'username' and 'password' with a 'sign up' button underneath. At the bottom of this section lies hyperlinked text which links to the sign-in page, should the user already be registered. The input fields are labelled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. If the user details are valid, they will be redirected to the profile page and a flash message will appear at the top of the screen notifying them that they have successfully signed up. Should the user's desired username already exist, they will receive a flash message notifying them that the username already exists. 
+  * A page header sits at the top of the page containing a < h1 > element, it informs the user of their location within the site. The header is followed by two text-input fields for the user's desired 'username' and 'password' with a 'Sign Up' button underneath. A line of text below the buttons to inform the user of the required password format. At the bottom of this section lies hyperlinked text which links to the sign-in page, should the user already be registered. The input fields are labelled, to indicate their purpose, and provide feedback to the user to ensure that they cannot submit an empty or invalid string. If the user details are valid, they will be redirected to the profile page and a flash message will appear at the top of the screen notifying them that they have successfully signed up. Should the user's desired username already exist, they will receive a flash message notifying them that the username already exists. 
 
     ![Log In](/readme-files/images/feature-sign-up-page.png)
 
 * Flash Message
 
-  * The flash messages consist of simple black text highlighted by a green background. The flash messages provide useful information/feedback to users and are located directly under the navbar for maximum visibility.
+  * The flash messages consist of simple black text highlighted by a green background. The flash messages provide useful information/feedback to users and are located directly under the navbar for maximum visibility; the only exception to this is the 'No Results Found' flash message which appears underneath the search panel on the homepage.
 
     ![Footer](/readme-files/images/feature-flash-msg.png)
 
@@ -287,16 +287,22 @@ Wireframes for mobile, tablet, and desktop can be found below:
 ## Features to be Implemented in Future
 
 * Pagination
-  * As the dictionary expands, pagination would make for a better user experience as the number of terms could become tedious if displayed on one page.
+  * As the dictionary expands, pagination would make for a better user experience as the number of terms could become tedious to browse if displayed on one page.
+
+&nbsp;
 
 * Categories
   * The addition of term categories would be useful for further dividing and organising dictionary terms. These categories could be added and updated by the site admin and would be selected from a drop-down menu when registered users are adding new terms.
 
+&nbsp;
+
 * Multiple Admins
   * It would be useful to have more than the one admin that is currently allowed. The addition of a boolean value would allow for this, with a key of 'is_admin'.
 
+&nbsp;
+
 * User and Admin authentication
-  * In the future, it would be prudent to create a higher level of security and authentication regarding registered site users, and the site admin, as the current authentication is very rudimentary.
+  * In the future, it would be prudent to create a higher level of security and authentication regarding registered site users, and the site admin, as the current authentication is extremely rudimentary.
 
 &nbsp;
 
@@ -404,7 +410,7 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 &nbsp;
 
 ## JavaScript
-[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings.
+[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The undefined variable shown 'M' relates to Materialize CCS Initialization code.
 
 <details><summary>JavaScript Validation</summary>
 <img src="readme-files/images/javascript-validation.png" alt="Validation of website JavaScript code">
@@ -451,14 +457,14 @@ A GitHub repository is used to store your project, with Git and GitHub used for 
 ## Forking the GitHub Repository
 
 Forking the GitHub Repository makes a copy of the original repository on our GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
-  1. Log in to GitHub and locate the repository: [magic-8-ball](https://github.com/davecoll3/speak-ev).
+  1. Log in to GitHub and locate the repository: [speak-ev](https://github.com/davecoll3/speak-ev).
   2. Once in the repository, navigate to the "Fork" button at the top right of the page; just above the settings button on the menu.
   3. You should now have a copy of the original repository in your GitHub account.
 
 &nbsp;
 
 ## Making a Local Clone
-  1. Log in to GitHub and locate the repository: [magic-8-ball](https://github.com/davecoll3/speak-ev).
+  1. Log in to GitHub and locate the repository: [speak-ev](https://github.com/davecoll3/speak-ev).
   2. Under the repository name, click "Clone or download".
   3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
   4. Open Git Bash
@@ -559,8 +565,8 @@ The live link can be found [here](https://speak-ev.herokuapp.com/)
 
 ## Content 
 
-  * The Code Institute readme-template provided the basic structure for the readme.md file.
-  * The Code Institute's Non-Relational Database Management Systems Mini Project was used to provide some basic structure and authentication.
+  * The Code Institute's readme-template provided the basic structure for the readme.md file.
+  * The Code Institute's Non-Relational Database Management Systems Mini Project was used to provide basic structure and authentication.
   * The [Materialize CSS](https://materializecss.com/) front-end framework was used to supply components such as navbar, sidenav, collapsible, and search panel.
 
 ## Media
@@ -570,7 +576,7 @@ The live link can be found [here](https://speak-ev.herokuapp.com/)
 
 ## Code
 
-  * The CSS code for changing the color of underline input and label in Materialize.css framework was sourced from [Stack Overflow](https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework) and is fully accredited within the code.
+  * The CSS code for changing the color of underline input and label in Materialize.css framework was sourced from [Stack Overflow](https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework) and is accredited within the code.
   * The JavaScript code for Materialize initialization was adapted from [Materialize](https://materializecss.com/) and is fully accredited within the code.
   * The JavaScript code for the back to top button was adapted from [W3Schools](code adapted from w3schools: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) and is fully accredited within the code.
 
