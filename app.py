@@ -58,7 +58,7 @@ def sign_up():
         flash("You have successfully signed up!")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("sign-up.html")
+    return render_template("sign_up.html")
 
 
 # login function to find user's username & password on the database
@@ -196,6 +196,50 @@ def delete_term(term_id):
     mongo.db.terms.delete_one({"_id": ObjectId(term_id)})
     flash("Term Successfully Deleted fom Dictionary")
     return redirect(url_for("get_terms"))
+
+
+# like a term definition
+@app.route("/like/<term_id>", methods=["GET", "POST"])
+def like(term_id):
+    if "user" in session:
+        # find the user
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})
+
+        # find the term using the term_id
+        term = mongo.db.terms.find_one(
+            {"_id": ObjectId(term_id)}
+        )
+
+        # if user has already liked the term, remove like
+        if user["_id"] in term["like"]:
+            mongo.db.terms.find_one_and_update(
+                {"_id": ObjectId(term_id)},
+                {"$pull": {"like": user["_id"]}}
+            )
+            flash("Your like has been removed")
+            return redirect(url_for('get_terms'))
+
+        else:
+            # if user has already disliked term, remove dislike
+            if user["_id"] in term["dislike"]:
+                mongo.db.terms.find_one_and_update(
+                    {"_id": ObjectId(term_id)},
+                    {"$pull": {"dislike": user["_id"]}}
+                )
+            # find term and update the like array with the user_id
+            mongo.db.terms.find_one_and_update(
+                {"_id": ObjectId(term_id)},
+                {"$addToSet": {"like": user["_id"]}},
+                {"upsert": "true"}
+            )
+            flash("Your like has been added")
+            return redirect(url_for('get_terms'))
+
+    else:
+        # direct unregistered users to login in page
+        flash("You must be logged in to like a term")
+        return redirect(url_for('login'))
 
 
 if __name__ == "__main__":
