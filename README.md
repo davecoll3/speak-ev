@@ -1,3 +1,7 @@
+![Responsive Mockup](/readme-files/images/responsive-mockup.webp)
+
+&nbsp;
+
 # Speak EV
 
 Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles (EVs). The site allows any visitor to view the dictionary and registered users to add their own terms to it. As EVs are a new and ever developing technology, it can be hard to keep up with all of the associated terms and acronyms. This is especially true for people adopting, or wishing to adopt, the technology for the first time. Speak EV aims to help demystify EV terms and jargon, making it accessible to all.
@@ -5,10 +9,6 @@ Speak EV is a crowdsourced dictionary of terms and jargon related to electric ve
 The primary technologies used to form the basis of this website are the coding languages HTML, CSS, JavaScript, Python, the Flask micro framework and template language Jinja. These were used in conjunction with the document based, non-relational database, MongoDB and deployed on Heroku.
 
 [View the live site here](https://speak-ev.herokuapp.com/)
-
-&nbsp;
-
-![Responsive Mockup](/readme-files/images/responsive-mockup.webp)
 
 &nbsp;
 
@@ -20,7 +20,8 @@ The primary technologies used to form the basis of this website are the coding l
     * [User Requirements and Expectations](#user-requirements-and-expectations)
     * [Design](#design)
     * [Wireframes](#wireframes)
-  * [Data Model](#data-model)
+  * [Database](#database)
+    * [Breakdown of Collections](#breakdown-of-collections)
   * [Features](#features)
     * [Existing Features](#existing-features)
     * [Features to be Implemented in the Future](#features-to-be-implemented-in-future)
@@ -158,9 +159,9 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 [Back to top &uarr;](#speak-ev)
 
-# Data Model
+# Database
 
-  MongoDB was chosen as the database for this project. MongoDB is a non-relational database that has a flexible data model. This project has two collections, one for 'terms' and a second for 'users'. Within the collections each document has several field-value pairs, these are outlined in the data model image below. 
+  MongoDB is a non-relational database that has a flexible data model. It was chosen as the database for this project as there are few relationships between the collections. This project consits of two collections, one for 'terms' and a second for 'users'. Within the collections each document has several key-value pairs, these are outlined in the data model image below.
 
   ![Data Model](readme-files/images/database-model.png)
 
