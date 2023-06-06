@@ -168,6 +168,29 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
   </details>
 
+## Breakdown of Collections
+
+### users
+| Key      | Value    | Description                    |
+|----------|----------|--------------------------------|
+| _id      | ObjectId | primary key                    |
+| username | String   | username chosen during sign-up |
+| password | String   | werkzeug salted password hash  |
+
+
+### terms
+| Key              | Value    | Description                                              |
+|------------------|----------|----------------------------------------------------------|
+| _id              | ObjectId | primary key                                              |
+| term_name        | String   | main term name.                                          |
+| alternative_name | String   | secondary term name (if any)                             |
+| term_definition  | String   | definition of the term                                   |
+| created_by       | String   | username from users collection                           |
+| created_on       | String   | datetime automatically added                             |
+| dislike          | Array    | users _id is added to the array when they dislike a term |
+| like             | Array    | users _id is added to the array when they like a term    |
+
+
 &nbsp;
 
 [Back to top &uarr;](#speak-ev)

@@ -138,7 +138,9 @@ def add_term():
             "alternative_name": request.form.get("alternative_name").upper(),
             "term_definition": request.form.get("term_definition"),
             "created_by": session["user"],
-            "created_on": datetime.today().strftime("%d-%b-%Y")
+            "created_on": datetime.today().strftime("%d-%b-%Y"),
+            "like": [],
+            "dislike": []
         }
         mongo.db.terms.insert_one(term)
         flash("Term Successfully Added to Dictionary")

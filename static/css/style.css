@@ -184,6 +184,17 @@ buttons
     background-color: #fafafa;
 }
 
+.vote-btns {
+    background-color: #b2ff59;
+    color: #000;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.vote-btns:hover {
+    background-color: #76ff03;
+}
+
 /* ==========
 back to top button
 ========== */
