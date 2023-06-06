@@ -161,12 +161,10 @@ Wireframes for mobile, tablet, and desktop can be found below:
 # Data Model
 
   MongoDB was chosen as the database for this project. MongoDB is a non-relational database that has a flexible data model. This project has two collections, one for 'terms' and a second for 'users'. Within the collections each document has several field-value pairs, these are outlined in the data model image below. 
-  <details>
-  <summary>Speak-EVData Model</summary>
 
   ![Data Model](readme-files/images/database-model.png)
 
-  </details>
+&nbsp;
 
 ## Breakdown of Collections
 
