@@ -242,6 +242,50 @@ def like(term_id):
         return redirect(url_for('login'))
 
 
+# dislike a term definition
+@app.route("/dislike/<term_id>")
+def dislike(term_id):
+    if "user" in session:
+        # find the user
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})
+
+        # find the term using the term_id
+        term = mongo.db.terms.find_one(
+            {"_id": ObjectId(term_id)}
+        )
+
+        # if user has already disliked the term, remove dislike
+        if user["_id"] in term["dislike"]:
+            mongo.db.terms.find_one_and_update(
+                {"_id": ObjectId(term_id)},
+                {"$pull": {"dislike": user["_id"]}}
+            )
+            flash("Your dislike has been removed")
+            return redirect(url_for('get_terms'))
+
+        else:
+            # if user has already liked term, remove like
+            if user["_id"] in term["like"]:
+                mongo.db.terms.find_one_and_update(
+                    {"_id": ObjectId(term_id)},
+                    {"$pull": {"like": user["_id"]}}
+                )
+            # find term and update the dislike array with the user_id
+            mongo.db.terms.find_one_and_update(
+                {"_id": ObjectId(term_id)},
+                {"$addToSet": {"dislike": user["_id"]}},
+                {"upsert": "true"}
+            )
+            flash("You dislike has been added")
+            return redirect(url_for('get_terms'))
+
+    else:
+        # direct unregistered users to login in page
+        flash("You must be logged in to dislike a term")
+        return redirect(url_for('login'))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
