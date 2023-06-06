@@ -175,6 +175,8 @@ Wireframes for mobile, tablet, and desktop can be found below:
 | username | String   | username chosen during sign-up |
 | password | String   | werkzeug salted password hash  |
 
+![Users Collection](readme-files/images/users-collection.png)
+
 
 ### terms
 | Key              | Value    | Description                                              |
@@ -188,6 +190,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 | dislike          | Array    | users _id is added to the array when they dislike a term |
 | like             | Array    | users _id is added to the array when they like a term    |
 
+![Terms Collection](readme-files/images/terms-collection.png)
 
 &nbsp;
 
