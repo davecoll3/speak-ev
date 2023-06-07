@@ -219,7 +219,7 @@ def like(term_id):
                 {"_id": ObjectId(term_id)},
                 {"$pull": {"like": user["_id"]}}
             )
-            flash("Your like has been removed")
+            flash("You un-liked '" + str(term["term_name"]) + "'")
             return redirect(url_for('get_terms'))
 
         else:
@@ -235,7 +235,7 @@ def like(term_id):
                 {"$addToSet": {"like": user["_id"]}},
                 {"upsert": "true"}
             )
-            flash("Your like has been added")
+            flash("You liked '" + str(term["term_name"]) + "'")
             return redirect(url_for('get_terms'))
 
     else:
@@ -263,7 +263,7 @@ def dislike(term_id):
                 {"_id": ObjectId(term_id)},
                 {"$pull": {"dislike": user["_id"]}}
             )
-            flash("Your dislike has been removed")
+            flash("You removed your '" + str(term["term_name"]) + "' dislike")
             return redirect(url_for('get_terms'))
 
         else:
@@ -279,7 +279,7 @@ def dislike(term_id):
                 {"$addToSet": {"dislike": user["_id"]}},
                 {"upsert": "true"}
             )
-            flash("You dislike has been added")
+            flash("You disliked '" + str(term["term_name"]) + "'")
             return redirect(url_for('get_terms'))
 
     else:

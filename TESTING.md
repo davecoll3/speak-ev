@@ -139,6 +139,8 @@
 
 &nbsp;
 
+[Back to top &uarr;](#testing)
+
 ## Features
 
 ### Navbar
