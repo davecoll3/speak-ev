@@ -1,13 +1,145 @@
 # Testing 
 
 ## Table of Contents   
-* [Manual Testing](#manual-testing)
+* [User Stories](#user-stories)
+* [Features](#features)
 * [Lighthouse](#lighthouse)
 * [Browser Compatibility](#browser-compatibility)
 * [Bugs](#bugs)
 * [Unresolved Bugs](#unresolved-bugs)
 
-## Manual Testing
+## User Stories
+
+### Site Admin
+#### ID 1 - 3
+* Expected
+  * Site owner can maintain a user generated resource which informs recent and potential adopters of EV technology.
+  * Site owner has admin credentials so that they can curate and moderate the site content.
+  * Site owner can manage all dictionary terms so that they can view, add, edit and delete terms on the site..
+
+* Testing
+    <details><summary>User Testing: Admin</summary>
+      <img src="readme-files/testing/admin-testing.png">
+    </details>
+
+* Result
+  * The site serves its purpose of informing recent and potential adopters of EV technology.
+  * The site owner(admin) has full CRUD functionallity on the site, allowing them to view, add, edit and delete their dictionary terms; both their own and those of registered site users. This allows them to curate and moderate all site content.
+
+&nbsp;
+
+### Viewing & Navigation
+#### ID 4
+* Expected
+  * Site users can easily see the purpose of the site and be informed as to whether it meets their needs.
+
+* Testing
+    <details><summary>User Testing: Purpose</summary>
+      <img src="readme-files/testing/purpose-testing.png">
+    </details>
+
+* Result
+  * The homepage hero image, text and terms collapsible combine to inform the user of the sites purpose.
+
+#### ID 5 - 6
+* Expected
+  * Site users can browse all dictionary terms and read their definitions.
+  * Site users can see how many likes and dislikes a term has so that they can trust the quality of the term and associated definition.
+
+* Testing
+    <details><summary>User Testing: Browsing</summary>
+      <img src="readme-files/testing/browsing-testing.png">
+    </details>
+
+* Result
+  * The hompage lists all dictionary terms, listed in alphabetical order, which can be clicked to reveal their related definition.
+  * The expanded term collapsible clearly displays the 'like' and 'dislike' buttons with associated number.
+
+#### ID 7
+* Expected
+  * Site users can search for keywords and quickly find the term they are seeking.
+
+* Testing
+    <details><summary>User Testing: Search</summary>
+      <img src="readme-files/testing/search-testing.png">
+    </details>
+
+* Result
+  * The search bar allows the user to search all terms by keyword and view a filtered list of results.
+
+&nbsp;
+
+### Registration & User Accounts
+#### ID 8
+* Expected
+  * Site users can easily sign-up for a new account allowing them to add new terms and like/dislike existing terms.
+
+* Testing
+    <details><summary>User Testing: Sign-Up</summary>
+      <img src="readme-files/testing/sign-up-testing.png">
+    </details>
+
+* Result
+  * By selecting 'Sign Up' in the navbar, users will have the option of registering which will bring them to a sign-up page.
+  * Once they have signed up, users will be able to add new terms and like/dislike existing terms.
+
+#### ID 9
+* Expected
+  * Registered users can easily log in and out of their account.
+
+* Testing
+    <details><summary>User Testing: Log in & out</summary>
+      <img src="readme-files/testing/log-in-testing.png">
+      <img src="readme-files/testing/log-out-testing.png">
+    </details>
+
+* Result
+  * Log in and out buttons are easily available at all times from the the navbar.
+
+#### ID 10
+* Expected
+  * Registered users can easily like and dislike term definitions.
+
+* Testing
+    <details><summary>User Testing: Like & Dislike</summary>
+      <img src="readme-files/testing/like-dislike-testing.png">
+    </details>
+
+* Result
+  * Like and dislike buttons are visable to all users underneath each term definition.
+  * Only registered users can like and dislike term definitions.
+
+#### ID 11 - 13
+* Expected
+  * Registered users can easily add, edit, and delete their own terms to the dictionary.
+
+* Testing
+    <details><summary>User Testing: Add, Edit & Delete</summary>
+      <img src="readme-files/testing/add-testing.png">
+      <img src="readme-files/testing/edit-testing.png">
+      <img src="readme-files/testing/delete-testing.png">
+    </details>
+
+* Result
+  * Registered users can find the 'add term' option in the navbar and on their profile page.
+  * Registered users can edit their own terms by using the "edit' button found under the term definition; on both the homepage and their profile page.
+  * Registered users can delete their own terms by using the "delete' button found under the term definition; on both the homepage and their profile page. A confirmation modal protects against unintentional deletions.
+
+#### ID 14
+* Expected
+  * Registered users have a personal profile page which shows a list of thier previously added terms.
+
+* Testing
+    <details><summary>User Testing: Profile</summary>
+      <img src="readme-files/testing/profile-testing.png">
+    </details>
+
+* Result
+  * The user's profile is easily accessible at all times from the navbar. This contains a list of their previously added terms and allows them to easily locate, edit or delete them.
+
+&nbsp;
+
+## Features Testing
 
 ### Navbar
 * Expected
@@ -105,6 +237,7 @@
     * When open, the collapsible should also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
     * When open, the collapsible should only display 'Edit' and 'Delete' buttons on terms created by the session user; these should appear on all terms for the admin.
     * The 'Edit' button should link to the edit term page while the 'Delete' button should trigger a modal asking if the user is sure that they want to delete the term.
+    * Like and dislike buttons should be displayed at the bottom of the collapsible.
 
   * Testing
     * The collapsible was tested for responsiveness on various screen sizes and devices using Chrome DevTools.
@@ -127,6 +260,7 @@
     * When open, the collapsible also displays the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
     * When open, the collapsible only displays 'Edit' and 'Delete' buttons on terms created by the session user; these on all terms for the admin.
     * The 'Edit' button links to the edit term page while the 'Delete' button triggers a modal asking if the user is sure that they want to delete the term.
+    * Like and dislike buttons are displayed at the bottom of the collapsible.
 
 &nbsp;
 

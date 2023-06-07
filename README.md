@@ -13,7 +13,6 @@ The primary technologies used to form the basis of this website are the coding l
 # Table of Contents
   * [UX and UI](#ux-and-ui)
     * [Research](#research)
-    * [Owner Goals](#owner-goals)
     * [User Stories](#user-stories)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
     * [Design](#design)
@@ -66,11 +65,11 @@ Research for the creation of this site was carried out by searching for various 
 ## User Stories
 
 **Site Admin**
-| ID | As a...         | I want to be able to...                       | So that I can..                                        |
-| -- | --------------- | --------------------------------------------- | ------------------------------------------------------ |
-| 1  | **Site Owner**  | create a user generated resource              | inform recent and potential adopters of EV technology. |
-| 2  | **Site Owner**  | have admin credentials                        | curate and moderate the site content.                  |
-| 3  | **Site Owner**  | manage all dictionary terms                   | view, add, edit and delete terms on the site.          |
+| ID | As a...         | I want to be able to...            | So that I can..                                        |
+| -- | --------------- | ---------------------------------- | ------------------------------------------------------ |
+| 1  | **Site Owner**  | maintain a user generated resource | inform recent and potential adopters of EV technology. |
+| 2  | **Site Owner**  | have admin credentials             | curate and moderate the site content.                  |
+| 3  | **Site Owner**  | manage all dictionary terms        | view, add, edit and delete terms on the site.          |
 
 &nbsp;
 
@@ -79,8 +78,8 @@ Research for the creation of this site was carried out by searching for various 
 | -- | --------------- | ------------------------------------------ | -------------------------------------------------------- |
 | 4  | **Site User**   | easily see the purpose of the site         | be informed as to whether it meets my needs.             |
 | 5  | **Site User**   | browse the dictionary without signing-up   | find and read definitions for all terms.                 |
-| 6  | **Site User**   | search for keywords                        | quickly find the term I am looking for.                  |
-| 7  | **Site User**   | see how many likes and dislikes a term has | trust the quality of the term and associated definition. |
+| 6  | **Site User**   | see how many likes and dislikes a term has | trust the quality of the term and associated definition. |
+| 7  | **Site User**   | search for keywords                        | quickly find the term I am looking for.                  |
 
 &nbsp;
 
