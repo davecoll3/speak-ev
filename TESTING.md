@@ -139,7 +139,7 @@
 
 &nbsp;
 
-## Features Testing
+## Features
 
 ### Navbar
 * Expected
@@ -235,9 +235,9 @@
     * The collapsible should display only the term name when closed and terms should be organised in alphabetical order.
     * The collapsible should open when selected.
     * When open, the collapsible should also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * Like and dislike buttons should be displayed just below the term definition.
     * When open, the collapsible should only display 'Edit' and 'Delete' buttons on terms created by the session user; these should appear on all terms for the admin.
     * The 'Edit' button should link to the edit term page while the 'Delete' button should trigger a modal asking if the user is sure that they want to delete the term.
-    * Like and dislike buttons should be displayed at the bottom of the collapsible.
 
   * Testing
     * The collapsible was tested for responsiveness on various screen sizes and devices using Chrome DevTools.
@@ -258,9 +258,9 @@
     * The collapsible displays only the term name when closed and terms are organised in alphabetical order.
     * The collapsible opens when selected.
     * When open, the collapsible also displays the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * Like and dislike buttons are displayed just below the term definition.
     * When open, the collapsible only displays 'Edit' and 'Delete' buttons on terms created by the session user; these on all terms for the admin.
     * The 'Edit' button links to the edit term page while the 'Delete' button triggers a modal asking if the user is sure that they want to delete the term.
-    * Like and dislike buttons are displayed at the bottom of the collapsible.
 
 &nbsp;
 
@@ -297,6 +297,7 @@
     * The collapsible should display only the term name when closed and terms should be organised in alphabetical order.
     * The collapsible should open when selected.
     * When open, the collapsible should also display the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * Like and dislike buttons should be displayed just below the term definition.
     * When open, the collapsible should display 'Edit' and 'Delete' buttons.
     * The 'Edit' button should link to the edit term page while the 'Delete' button should trigger a modal asking if the user is sure that they want to delete the term.
 
@@ -316,6 +317,7 @@
     * The collapsible displays only the term name when closed and terms are organised in alphabetical order.
     * The collapsible opens when selected.
     * When open, the collapsible also displays the alternative term name (if any), the term definition, and information on who posted the term and when it was last updated.
+    * Like and dislike buttons are displayed just below the term definition.
     * When open, the collapsible displays 'Edit' and 'Delete' buttons.
     * The 'Edit' button links to the edit term page while the 'Delete' button triggers a modal asking if the user is sure that they want to delete the term.
 
@@ -440,6 +442,7 @@
         <img src="readme-files/testing/testing-flash-msg-3.png">
         <img src="readme-files/testing/testing-flash-msg-4.png">
         <img src="readme-files/testing/testing-flash-msg-5.png">
+        <img src="readme-files/testing/testing-flash-msg-6.png">
       </details>
 
   * Result
