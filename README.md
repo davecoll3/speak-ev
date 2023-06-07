@@ -1,7 +1,5 @@
 ![Responsive Mockup](/readme-files/images/responsive-mockup.webp)
 
-&nbsp;
-
 # Speak EV
 
 Speak EV is a crowdsourced dictionary of terms and jargon related to electric vehicles (EVs). The site allows any visitor to view the dictionary and registered users to add their own terms to it. As EVs are a new and ever developing technology, it can be hard to keep up with all of the associated terms and acronyms. This is especially true for people adopting, or wishing to adopt, the technology for the first time. Speak EV aims to help demystify EV terms and jargon, making it accessible to all.
@@ -65,35 +63,37 @@ Research for the creation of this site was carried out by searching for various 
 
 &nbsp;
 
-## Owner Goals
+## User Stories
 
-  * As the site owner, I want to create a user generated resource for recent and potential adopters of EV technology.
-  * As the site owner, I want to allow all visitors to the side to view the dictionary without the need to sign-up.
-  * As the site owner, I want to allow site users to sign-up and add new terms to the dictionary.
-  * As the site owner, I want to allow site users to edit and delete terms that they have previously submitted.
-  * As the site owner, I want to allow a site admin to add new terms to the dictionary.
-  * As the site owner, I want to allow a site admin to edit and delete all dictionary terms.
+**Site Admin**
+| ID | As a...         | I want to be able to...                       | So that I can..                                        |
+| -- | --------------- | --------------------------------------------- | ------------------------------------------------------ |
+| 1  | **Site Owner**  | create a user generated resource              | inform recent and potential adopters of EV technology. |
+| 2  | **Site Owner**  | have admin credentials                        | curate and moderate the site content.                  |
+| 3  | **Site Owner**  | manage all dictionary terms                   | view, add, edit and delete terms on the site.          |
 
 &nbsp;
 
-## User Stories
+**Viewing & Navigation**
+| ID | As a...         | I want to be able to...                    | So that I can..                                          |
+| -- | --------------- | ------------------------------------------ | -------------------------------------------------------- |
+| 4  | **Site User**   | easily see the purpose of the site         | be informed as to whether it meets my needs.             |
+| 5  | **Site User**   | browse the dictionary without signing-up   | find and read definitions for all terms.                 |
+| 6  | **Site User**   | search for keywords                        | quickly find the term I am looking for.                  |
+| 7  | **Site User**   | see how many likes and dislikes a term has | trust the quality of the term and associated definition. |
 
-### First Time Visitor
- 
-  * As a first time user, I want to immediately understand the purpose of the website.
-  * As a first time user, I want to be able to browse the dictionary without having to sign-up.
-  * As a first time user, I want to be able to easily find and read definitions for all dictionary terms.
-  * As a first time user, I want to be able to search for keywords.
-  * As a first time user, I want to be able to easily sign-up without having to supply a lot of information.
+&nbsp;
 
-### Returning Visitor
-
-  * As a returning user, I want to be able to browse the dictionary without having to sign-in.
-  * As a returning user, I want to be able to sign-in and out easily.
-  * As a returning user, I want to be able to add new terms to the dictionary.
-  * As a returning user, I want to be able to see all terms that I have added all in one place.
-  * As a returning user, I want to be able to find, edit, and delete terms that I have added.
-
+**Registration & User Accounts**
+| ID | As a...              | I want to be able to...            | So that I can..                                         |
+| -- | -------------------- | ---------------------------------- | ------------------------------------------------------- |
+| 8  | **Site User**        | easily sign-up for a new account   | add new terms and like/dislike existing terms.          |
+| 9  | **Registered User**  | easily login and out of my account | use the site with the advantages of a registered user.  |
+| 10 | **Registered User**  | like and dislike dictionary terms  | rate the quality of the term and associated definition. |
+| 11 | **Registered User**  | add new dictionary terms           | share my knowledge with the comminity.                  |
+| 12 | **Registered User**  | edit my dictionary terms           | correct and update my dictionary entries.               |
+| 13 | **Registered User**  | delete my dictionary terms         | remove my unwanted dictionary entries.                  |
+| 14 | **Registered User**  | have a personal user profile       | view all terms that I have contributed.                 |
 
 &nbsp;
 
