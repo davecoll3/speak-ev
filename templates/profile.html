@@ -29,6 +29,14 @@
                     <div class="collapsible-body">
                         <strong>{{ term.alternative_name }}</strong>
                         <p>{{ term.term_definition }}</p>
+                        <!-- like and dislike buttons -->
+                        <a href="{{ url_for('like', term_id=term._id) }}" class="vote-btns btn-small" title="Like term" aria-label="Like term">
+                            <i class="fa-solid fa-thumbs-up"> {{ term.like|length }}</i>
+                        </a>
+                        <a href="{{ url_for('dislike', term_id=term._id) }}" class="vote-btns btn-small" title="Dislike term" aria-label="Dislike term">
+                            <i class="fa-solid fa-thumbs-down"> {{ term.dislike|length }}</i>
+                        </a>
+                        <!-- posted by and last update information -->
                         <p>
                             <em>Posted by: {{ term.created_by }}<br>
                             Last update on: {{ term.created_on }}</em>

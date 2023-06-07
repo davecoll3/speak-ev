@@ -187,7 +187,7 @@ buttons
 .vote-btns {
     background-color: #b2ff59;
     color: #000;
-    margin: 5px;
+    margin: 5px 5px 5px 0;
     cursor: pointer;
 }
 
