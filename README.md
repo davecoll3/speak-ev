@@ -474,6 +474,7 @@ A GitHub repository is used to store your project, with Git and GitHub used for 
   4. Choose your repository visibility; 'Public' or 'Private'.
   5. Select Initialize this repository with a README.
   6. Click Create repository.
+  7. Make sure that env.py is listed in your .gitignore file to prevent your environment variables being pushed publicly.
 
 &nbsp;
 
@@ -506,8 +507,11 @@ Forking the GitHub Repository makes a copy of the original repository on our Git
   > remove: Total 10 (delta 1), reused 10 (delta 1)
   > Unpacking objects: 100% (10/10), done.
   ```
+  8. Make sure that env.py is listed in your .gitignore file to prevent your environment variables being pushed publicly.
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+&nbsp;
 
 ## MongoDB: Database Setup
 You will need to create a database and MongoDB was chosen for this project. Please follow the steps below to create your MongoDB cluster and collections.
@@ -532,76 +536,39 @@ You will need to create a database and MongoDB was chosen for this project. Plea
     | dislike          | Array    |
     | like             | Array    |
 
+&nbsp;
 
-## Heroku Deployment: Project Setup
+## Heroku Deployment: 
 
-If you don't have a Heroku account, or if you have yet to install the Heroku CLI, see [How to Install the Heroku CLI](https://coding-boot-camp.github.io/full-stack/heroku/how-to-install-the-heroku-cli) before you proceed.
+This project was deployed on Heroku and connected to the GitHub repository. You can follow the steps below in order to deploy to Heroku.
 
-  1. Make sure that your project is initialized as a Git repository. You can check this by running the following command at the root of your project.
+  1. Starting in your GitPod terminal, create a requirements.txt and Procfile using the commands below.
   ```
-  git status
+  pip3 freeze --local > requirements.txt
+  echo web: python app.py > Procfile
   ```
+  NB: The Procfile may have a blank line at the end of the file which can cause problems when running the app on Heroku. Make sure to delete any blank lines and save the file.
+  2. Push these changes to GitHub.
+  3. On the [Heroku website](https://heroku.com/), log into your account. If you don't have a Heroku account, you can sign-up for one [here](https://signup.heroku.com/).
+  4. Click on the 'New' button in the top right-hand corner and then 'Create a New App'.
+  5. Give your app a unique name (speak-ev) and select your local region. Then click on the "Create App" button.
+  6. Once your app has been created, go to the 'Deploy' tab and under 'Deployment method' choose GitHub.
+  7. In the 'Connect to GitHub' input field enter your GitHub repository name and, once found, click 'Connect'.
+  8. Now navigate to the app's settings tab and click "Reveal config vars".
 
-  2. If you encounter an error, that means that your project isn't yet a Git repository. You can initialize the repository by running the following command.
-  ```
-  git init
-  ```
+| Key             | Value                                                                                                    |
+|-----------------|----------------------------------------------------------------------------------------------------------|
+| IP              | 0.0.0.0                                                                                                  |
+| PORT            | 5000                                                                                                     |
+| SECRET_KEY      | <your_secret_key >                                                                                       |
+| MONGO_URI	      | mongodb+srv://<username>:@<cluster_name>-ofgqg.mongodb.net/<database_name>?retryWrites=true&w=majority   |
+| MONGO_DBNAME    | <your_database_name>                                                                                     |
 
-  3. Applications that feature an Express.js back end can use Heroku's PORT environment variable. To set this up, create a port variable with a value of process.env.PORT. You can also add a default value for local instances of your server by using the || syntax.
-  ```
-  const port = process.env.PORT || 3001
-  ```
+  9. Back in the apps 'Deploy' tab, under 'Automatic deploys' select 'Enable automatic deploys'.
+  10. Finally, under 'Manual deploy', select 'main' and click 'Deploy branch'.
+  11. Once the app has finished building, click 'Open app' from the top of the page and you will see the live site in a new window.
 
-## Heroku Deployment: Create a Heroku App
-
-Now that you have created the repository and configured the server, you can create an app on Heroku. Using the steps below, this can be done without opening the browser.
-  1. Create a new Heroku app by running the following command in the root of your project:
-  ```
-  heroku create
-  ```
-
-  2. The Heroku CLI will randomly generate an app name, but you can specify a name using the following syntax.
-  ```
-  heroku create <app name>
-  ```
-
-  3. Once you have created the app, you can run 'git remote -v' to verify that the Heroku remote URL was added by the Heroku CLI
-  ```
-  git remote -v
-  heroku  https://git.heroku.com/<heroku-app-name>.git (fetch)
-  heroku  https://git.heroku.com/<heroku-app-name>.git (push)
-  ```
-
-  4. The remote URL gets added automatically to your Git repository without requiring any extra commands. You can now prepare for deployment.
-
-## Heroku Deployment: Deploy to Heroku
-
-  1. Add and commit all your project files, then push to Heroku.
-  ```
-  git add -A
-  git commit -m "Pushing to Heroku"
-  git push heroku main
-  ```
-
-  2. Confirm that the application was deployed successfully by visiting the application URL provided in the terminal. Sometimes the output will say that the build was successful, but you should still open your application in the browser to verify.
-  ```
-  remote: -----> Build succeeded!
-  remote: -----> Discovering process types
-  remote:        Procfile declares types     -> (none)
-  remote:        Default types for buildpack -> web
-  remote:
-  remote: -----> Compressing...
-  remote:        Done: 33.8M
-  remote: -----> Launching...
-  remote:        Released v9
-  remote:        https://lit-retreat-65972.herokuapp.com/ deployed to Heroku
-  ```
-
-  3. Your app should now be deployed with a server to Heroku. The link will be accessible as long as your app exists on Heroku.
-
-If you encounter any issues, further details on Heroku deployment and troubleshooting can be found [here](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
-
-The live link can be found [here](https://speak-ev.herokuapp.com/)
+The live link, for this project, can be found [here](https://speak-ev.herokuapp.com/)
 
 &nbsp;
 
