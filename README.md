@@ -26,7 +26,7 @@ The primary technologies used to form the basis of this website are the coding l
     * [Languages](#languages)
     * [Frameworks](#frameworks)
     * [Template Engine](#template-engine)
-    * [Database](#database)
+    * [NoSQL Database](#nosql-database)
     * [Application Platform](#application-platform)
     * [Version Control](#version-control)
     * [Libraries](#libraries)
@@ -243,7 +243,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 * Homepage: Collapsible
 
-  * The collapsible is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term (if any). When a user selects a row on the collapsible, it reveals the term definition and a subsequent selection hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden. Additionally, the site admin will have access to two further buttons within the open collapsible, allowing them to edit and delete terms; registered users will only have these buttons shown for their own terms. These 'Edit' and 'Delete' buttons link to the edit term page and a delete term modal respectively.
+  * The collapsible is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the last updated date, an alternative name for the term (if any) and like/dislike buttons. When a user selects a row on the collapsible, it reveals the term definition and a subsequent selection hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden. Additionally, the site admin will have access to two further buttons within the open collapsible, allowing them to edit and delete terms; registered users will only have these buttons shown for their own terms. These 'Edit' and 'Delete' buttons link to the edit term page and a delete term modal respectively.
 
     ![Homepage: Collapsible](/readme-files/images/feature-homepage-collapsible.png)
 
@@ -255,7 +255,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 * Profile: Collapsible
 
-  * The collapsible is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the submission date and an alternative name for the term. Additionally, 'Edit' and 'Delete' buttons are available to the user which link to the edit term page and a delete term modal respectively. On the profile page, the terms listed are just those created by the session user. When a user selects a row on the collapsible, it reveals the term definition and a subsequent selection hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden.
+  * The collapsible is used to display the term names and to show/hide the term definition; along with information regarding the user who submitted the term, the last updated date, an alternative name for the term (if any) and like/dislike buttons. Additionally, 'Edit' and 'Delete' buttons are available to the user which link to the edit term page and a delete term modal respectively. On the profile page, the terms listed are just those created by the session user. When a user selects a row on the collapsible, it reveals the term definition and a subsequent selection hides it again. If a secondary row is selected, when another row is already open, the new row will open while the previously selected row will be hidden.
 
     ![Profile: Collapsible](/readme-files/images/feature-profile-collapsible.png)
 
@@ -347,7 +347,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 ## Template Engine
   * [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
 
-## Database
+## NoSQL Database
   * [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
 
 ## Application Platform
@@ -467,7 +467,6 @@ The color contrast accessibility validator [a11y](https://color.a11y.com/) was u
 # Deployment
 
 ## Creating a Gitpod Repository
-
 A GitHub repository is used to store your project, with Git and GitHub used for version control. The following steps outline how to create a GitHub repository.
   1. Log in to GitHub.
   2. In the upper-right corner of any page, use the '+' drop-down menu and select 'New repository'.
@@ -479,7 +478,6 @@ A GitHub repository is used to store your project, with Git and GitHub used for 
 &nbsp;
 
 ## Forking the GitHub Repository
-
 Forking the GitHub Repository makes a copy of the original repository on our GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
   1. Log in to GitHub and locate the repository: [speak-ev](https://github.com/davecoll3/speak-ev).
   2. Once in the repository, navigate to the "Fork" button at the top right of the page; just above the settings button on the menu.
@@ -510,6 +508,30 @@ Forking the GitHub Repository makes a copy of the original repository on our Git
   ```
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+## MongoDB: Database Setup
+You will need to create a database and MongoDB was chosen for this project. Please follow the steps below to create your MongoDB cluster and collections.
+  1. Start by creating a MongoDB account, you can create a free one [here.](https://account.mongodb.com/account/register?n=%2Fv2%2F63f3509c2ed57d7fd123ae21%23%2Fmetrics%2FreplicaSet%2F63f35119f95a7d6a8397ac82%2Fexplorer%2Fspeak_ev%2Fusers%2Ffind).
+  2. Once your account has been created, you will then be asked to 'Deoply your database' and offered several options. Select the free tier M0 template, choose a cloud provider (such as AWS), select the region closest to your locality and, finally, give your cluster a name. Then click 'create'.
+  3. You will then need to create users and set up network security controls. Use the default 'Username and Password' authentication method and set your username and password. Be sure to choose an alphanumeric password as special characters can cause problems within the project. Additionally, do not expose your password in your code as this could comprimise the security of your database.
+  4. Under the second option, 'Where would you like to connect from', type '0.0.0.0/0' to allow access from anywhere. Finally, click the green 'Finish and close' button. Once deployed, your 'Network Access' settings should be changed to the IP addresses of your hosts, for added security.
+  5. Your cluster should now be ready and you can create your first collection. 
+  6. To add a collection, navigate to the 'collections' tab on your cluster and then click 'Add my own data'.
+  7. Start by giving your database a name (speak_ev was chosen for this project) and name your first collection 'users'.
+  8. Back on the speak_ev database dashboard, click 'create collection' and add a second collection named 'terms'.
+  9. In the terms collection, click 'insert document' and set it up as shown below.
+
+    | Key              | Value    |
+    |------------------|----------|
+    | _id              | ObjectId |
+    | term_name        | String   |
+    | alternative_name | String   |
+    | term_definition  | String   |
+    | created_by       | String   |
+    | created_on       | String   |
+    | dislike          | Array    |
+    | like             | Array    |
+
 
 ## Heroku Deployment: Project Setup
 
