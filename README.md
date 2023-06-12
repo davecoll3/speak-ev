@@ -18,7 +18,6 @@ The primary technologies used to form the basis of this website are the coding l
     * [Design](#design)
     * [Wireframes](#wireframes)
   * [Database](#database)
-    * [Breakdown of Collections](#breakdown-of-collections)
   * [Features](#features)
     * [Existing Features](#existing-features)
     * [Features to be Implemented in the Future](#features-to-be-implemented-in-future)
@@ -42,9 +41,8 @@ The primary technologies used to form the basis of this website are the coding l
     * [Creating a GitHub Repository](#creating-a-github-repository)
     * [Forking the GitHub Repository](#forking-the-github-repository)
     * [Making a Local Clone](#making-a-local-clone)
-    * [Heroku Deployment: Project Setup](#heroku-deployment-project-setup)
-    * [Heroku Deployment: Create a Heroku App](#heroku-deployment-create-a-heroku-app)
-    * [Heroku Deployment: Deploy to Heroku](#heroku-deployment-deploy-to-heroku)
+    * [MongoDB: Database Setup](#mongodb-database-setup)
+    * [Heroku Deployment](#heroku-deployment)
   * [Credits](#credits)
 
 &nbsp;
@@ -160,15 +158,9 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 # Database
 
-  MongoDB is a non-relational database that has a flexible data model. It was chosen as the database for this project as there are few relationships between the collections. This project consits of two collections, one for 'terms' and a second for 'users'. Within the collections each document has several key-value pairs, these are outlined in the data model image below.
+  MongoDB is a non-relational database that has a flexible data model. It was chosen as the database for this project as there are few relationships between the collections. This project consits of two collections, one for 'terms' and a second for 'users'. Within the collections each document has several key-value pairs, these are outlined below.
 
-  ![Data Model](readme-files/images/database-model.png)
-
-&nbsp;
-
-## Breakdown of Collections
-
-### users
+## users
 | Key      | Value    | Description                    |
 |----------|----------|--------------------------------|
 | _id      | ObjectId | primary key                    |
@@ -177,8 +169,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 ![Users Collection](readme-files/images/users-collection.png)
 
-
-### terms
+## terms
 | Key              | Value    | Description                                              |
 |------------------|----------|----------------------------------------------------------|
 | _id              | ObjectId | primary key                                              |
@@ -191,6 +182,64 @@ Wireframes for mobile, tablet, and desktop can be found below:
 | like             | Array    | users _id is added to the array when they like a term    |
 
 ![Terms Collection](readme-files/images/terms-collection.png)
+
+  In the 'users' collection above, the value asscoiated with the 'username' key is entered by a new user when they are generating an account. This is an alphanumeric value, controlled by the use of the pattern attribute in the username input, and is checked agains existing 'username' values in the database to prevent duplication; as shown by the code snippet below.
+  
+  ```
+    # sign up function to add new users to the database
+    @app.route("/sign_up", methods=["GET", "POST"])
+    def sign_up():
+        if request.method == "POST":
+            # check if username already exists in the database
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
+
+            if existing_user:
+                flash("Username already exists")
+                return redirect(url_for("sign_up"))
+  ```
+
+  This is important as the 'username' value is refrenced in the 'terms' collection, when a user creates a new term, their username is recorded and stored as the value for the "created_by" key. Additionally, the value of the '_id' key in the 'users' collection is refrenced in the 'terms' collection as a value for the 'dislike' and 'like' keys; the users_id is added and removed, from the relevant array, as users like and dislike term definitions in the dictionary, as shown by the like code snippet below.
+
+  ```
+    # like a term definition
+    @app.route("/like/<term_id>", methods=["GET", "POST"])
+    def like(term_id):
+        if "user" in session:
+            # find the user
+            user = mongo.db.users.find_one(
+                {"username": session["user"]})
+
+            # find the term using the term_id
+            term = mongo.db.terms.find_one(
+                {"_id": ObjectId(term_id)}
+            )
+
+            # if user has already liked the term, remove like
+            if user["_id"] in term["like"]:
+                mongo.db.terms.find_one_and_update(
+                    {"_id": ObjectId(term_id)},
+                    {"$pull": {"like": user["_id"]}}
+                )
+                flash("You un-liked '" + str(term["term_name"]) + "'")
+                return redirect(url_for('get_terms'))
+
+            else:
+                # if user has already disliked term, remove dislike
+                if user["_id"] in term["dislike"]:
+                    mongo.db.terms.find_one_and_update(
+                        {"_id": ObjectId(term_id)},
+                        {"$pull": {"dislike": user["_id"]}}
+                    )
+                # find term and update the like array with the user_id
+                mongo.db.terms.find_one_and_update(
+                    {"_id": ObjectId(term_id)},
+                    {"$addToSet": {"like": user["_id"]}},
+                    {"upsert": "true"}
+                )
+                flash("You liked '" + str(term["term_name"]) + "'")
+                return redirect(url_for('get_terms'))
+  ```
 
 &nbsp;
 
@@ -538,23 +587,25 @@ You will need to create a database and MongoDB was chosen for this project. Plea
 
 &nbsp;
 
-## Heroku Deployment: 
+## Heroku Deployment
 
 This project was deployed on Heroku and connected to the GitHub repository. You can follow the steps below in order to deploy to Heroku.
 
   1. Starting in your GitPod terminal, create a requirements.txt and Procfile using the commands below.
+
   ```
   pip3 freeze --local > requirements.txt
   echo web: python app.py > Procfile
   ```
   NB: The Procfile may have a blank line at the end of the file which can cause problems when running the app on Heroku. Make sure to delete any blank lines and save the file.
+
   2. Push these changes to GitHub.
   3. On the [Heroku website](https://heroku.com/), log into your account. If you don't have a Heroku account, you can sign-up for one [here](https://signup.heroku.com/).
   4. Click on the 'New' button in the top right-hand corner and then 'Create a New App'.
-  5. Give your app a unique name (speak-ev) and select your local region. Then click on the "Create App" button.
+  5. Give your app a unique name (e.g. 'speak-ev') and select your local region. Then click on the 'Create App' button.
   6. Once your app has been created, go to the 'Deploy' tab and under 'Deployment method' choose GitHub.
   7. In the 'Connect to GitHub' input field enter your GitHub repository name and, once found, click 'Connect'.
-  8. Now navigate to the app's settings tab and click "Reveal config vars".
+  8. Now navigate to the app's settings tab and click 'Reveal config vars'. Input the following key - value pairs, inserting your own values where stated (<cluster_name> etc):
 
 | Key             | Value                                                                                                    |
 |-----------------|----------------------------------------------------------------------------------------------------------|
