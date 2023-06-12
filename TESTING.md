@@ -24,7 +24,7 @@
 
 * Result
   * The site serves its purpose of informing recent and potential adopters of EV technology.
-  * The site owner(admin) has full CRUD functionallity on the site, allowing them to view, add, edit and delete their dictionary terms; both their own and those of registered site users. This allows them to curate and moderate all site content.
+  * The site owner(admin) has full CRUD functionality on the site, allowing them to view, add, edit and delete their dictionary terms; both their own and those of registered site users. This allows them to curate and moderate all site content.
 
 &nbsp;
 
@@ -39,7 +39,7 @@
     </details>
 
 * Result
-  * The homepage hero image, text and terms collapsible combine to inform the user of the sites purpose.
+  * The homepage hero image, text and terms collapsible combine to inform the user of the site's purpose.
 
 #### ID 5 - 6
 * Expected
@@ -52,8 +52,8 @@
     </details>
 
 * Result
-  * The hompage lists all dictionary terms, listed in alphabetical order, which can be clicked to reveal their related definition.
-  * The expanded term collapsible clearly displays the 'like' and 'dislike' buttons with associated number.
+  * The homepage lists all dictionary terms, listed in alphabetical order, which can be clicked to reveal their related definition.
+  * The expanded term collapsible clearly displays the 'like' and 'dislike' buttons with associated numbers.
 
 #### ID 7
 * Expected
@@ -94,7 +94,7 @@
     </details>
 
 * Result
-  * Log in and out buttons are easily available at all times from the the navbar.
+  * Log in and out buttons are easily available at all times from the navbar.
 
 #### ID 10
 * Expected
@@ -106,7 +106,7 @@
     </details>
 
 * Result
-  * Like and dislike buttons are visable to all users underneath each term definition.
+  * Like and dislike buttons are visible to all users underneath each term definition.
   * Only registered users can like and dislike term definitions.
 
 #### ID 11 - 13
@@ -127,7 +127,7 @@
 
 #### ID 14
 * Expected
-  * Registered users have a personal profile page which shows a list of thier previously added terms.
+  * Registered users have a personal profile page which shows a list of their previously added terms.
 
 * Testing
     <details><summary>User Testing: Profile</summary>

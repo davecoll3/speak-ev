@@ -220,7 +220,7 @@ def like(term_id):
                 {"_id": ObjectId(term_id)},
                 {"$pull": {"like": user["_id"]}}
             )
-            flash("You un-liked '" + str(term["term_name"]) + "'")
+            flash("You unliked '" + str(term["term_name"]) + "'")
             return redirect(url_for('get_terms'))
 
         else:

@@ -87,7 +87,7 @@ Research for the creation of this site was carried out by searching for various 
 | 8  | **Site User**        | easily sign-up for a new account   | add new terms and like/dislike existing terms.          |
 | 9  | **Registered User**  | easily login and out of my account | use the site with the advantages of a registered user.  |
 | 10 | **Registered User**  | like and dislike dictionary terms  | rate the quality of the term and associated definition. |
-| 11 | **Registered User**  | add new dictionary terms           | share my knowledge with the comminity.                  |
+| 11 | **Registered User**  | add new dictionary terms           | share my knowledge with the community.                  |
 | 12 | **Registered User**  | edit my dictionary terms           | correct and update my dictionary entries.               |
 | 13 | **Registered User**  | delete my dictionary terms         | remove my unwanted dictionary entries.                  |
 | 14 | **Registered User**  | have a personal user profile       | view all terms that I have contributed.                 |
@@ -111,7 +111,7 @@ Research for the creation of this site was carried out by searching for various 
 ### Expectations
 
   * Feedback when interacting with the site that is also instructive.
-  * Color choices for links and buttons should be familar and logical.
+  * Color choices for links and buttons should be familiar and logical.
 
 &nbsp;
 
@@ -158,7 +158,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 # Database
 
-  MongoDB is a non-relational database that has a flexible data model. It was chosen as the database for this project as there are few relationships between the collections. This project consits of two collections, one for 'terms' and a second for 'users'. Within the collections each document has several key-value pairs, these are outlined below.
+  MongoDB is a non-relational database that has a flexible data model. It was chosen as the database for this project as there are few relationships between the collections. This project consists of two collections, one for 'terms' and a second for 'users'. Within the collections each document has several key-value pairs, these are outlined below.
 
 ## users
 | Key      | Value    | Description                    |
@@ -183,7 +183,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 ![Terms Collection](readme-files/images/terms-collection.png)
 
-  In the 'users' collection above, the value asscoiated with the 'username' key is entered by a new user when they are generating an account. This is an alphanumeric value, controlled by the use of the pattern attribute in the username input, and is checked agains existing 'username' values in the database to prevent duplication; as shown by the code snippet below.
+  In the 'users' collection above, the value associated with the 'username' key is entered by a new user when they are generating an account. This is an alphanumeric value, controlled by the use of the pattern attribute in the username input, and is checked against existing 'username' values in the database to prevent duplication; as shown by the code snippet below.
   
   ```
     # sign up function to add new users to the database
@@ -199,7 +199,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
                 return redirect(url_for("sign_up"))
   ```
 
-  This is important as the 'username' value is refrenced in the 'terms' collection, when a user creates a new term, their username is recorded and stored as the value for the "created_by" key. Additionally, the value of the '_id' key in the 'users' collection is refrenced in the 'terms' collection as a value for the 'dislike' and 'like' keys; the users_id is added and removed, from the relevant array, as users like and dislike term definitions in the dictionary, as shown by the like code snippet below.
+  This is important as the 'username' value is referenced in the 'terms' collection, when a user creates a new term, their username is recorded and stored as the value for the "created_by" key. Additionally, the value of the '_id' key in the 'users' collection is referenced in the 'terms' collection as a value for the 'dislike' and 'like' keys; the users_id is added and removed, from the relevant array, as users like and dislike term definitions in the dictionary, as shown by the like code snippet below.
 
   ```
     # like a term definition
@@ -221,7 +221,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
                     {"_id": ObjectId(term_id)},
                     {"$pull": {"like": user["_id"]}}
                 )
-                flash("You un-liked '" + str(term["term_name"]) + "'")
+                flash("You unliked '" + str(term["term_name"]) + "'")
                 return redirect(url_for('get_terms'))
 
             else:
@@ -565,8 +565,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ## MongoDB: Database Setup
 You will need to create a database and MongoDB was chosen for this project. Please follow the steps below to create your MongoDB cluster and collections.
   1. Start by creating a MongoDB account, you can create a free one [here.](https://account.mongodb.com/account/register?n=%2Fv2%2F63f3509c2ed57d7fd123ae21%23%2Fmetrics%2FreplicaSet%2F63f35119f95a7d6a8397ac82%2Fexplorer%2Fspeak_ev%2Fusers%2Ffind).
-  2. Once your account has been created, you will then be asked to 'Deoply your database' and offered several options. Select the free tier M0 template, choose a cloud provider (such as AWS), select the region closest to your locality and, finally, give your cluster a name. Then click 'create'.
-  3. You will then need to create users and set up network security controls. Use the default 'Username and Password' authentication method and set your username and password. Be sure to choose an alphanumeric password as special characters can cause problems within the project. Additionally, do not expose your password in your code as this could comprimise the security of your database.
+  2. Once your account has been created, you will then be asked to 'Deploy your database' and offered several options. Select the free tier M0 template, choose a cloud provider (such as AWS), select the region closest to your locality and, finally, give your cluster a name. Then click 'create'.
+  3. You will then need to create users and set up network security controls. Use the default 'Username and Password' authentication method and set your username and password. Be sure to choose an alphanumeric password as special characters can cause problems within the project. Additionally, do not expose your password in your code as this could compromise the security of your database.
   4. Under the second option, 'Where would you like to connect from', type '0.0.0.0/0' to allow access from anywhere. Finally, click the green 'Finish and close' button. Once deployed, your 'Network Access' settings should be changed to the IP addresses of your hosts, for added security.
   5. Your cluster should now be ready and you can create your first collection. 
   6. To add a collection, navigate to the 'collections' tab on your cluster and then click 'Add my own data'.
