@@ -804,9 +804,6 @@
 
 ### Collapsible Not Vertically Centering on Page
   During the testing phase, it was noted that the collapsible occasionally will display its contents below the fold when open. This means that the user has to scroll to reveal the contents and does not create a good user experience. Ideally, some JavaScript could be added to ensure that the open collapsible centres itself vertically.
- 
- ### Navbar Menu Items Not Active
-   Materialize allows for an active class to be added to the menu < li > elements to highlight, on the navbar, which page the user is currently on. However, due to the navbar code only appearing on the base.html file, it is not as simple to implement as is shown in the Materialize documentation and requires further jinja or JavaScript code to achieve this. In order to mitigate the effects of this, page headers are used to help signpost the current page to users.
 
 &nbsp;
 
