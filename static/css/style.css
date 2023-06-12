@@ -65,6 +65,11 @@ navbar
     font-size: 30px;
 }
 
+header ul li.active {
+    background-color: #333 !important;
+    font-weight: 600;
+}
+
 /* ==========
 hero image container
 ========== */

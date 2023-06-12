@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route("/get_terms")
 def get_terms():
     terms = list(mongo.db.terms.find().sort("term_name", 1))
-    return render_template("terms.html", terms=terms)
+    return render_template("terms.html", terms=terms, page='terms')
 
 
 # search function to search the terms database
@@ -58,7 +58,7 @@ def sign_up():
         flash("You have successfully signed up!")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("sign_up.html")
+    return render_template("sign_up.html", page='sign_up')
 
 
 # login function to find user's username & password on the database
@@ -88,7 +88,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", page='log_in')
 
 
 # profile function to find session user's username
@@ -100,7 +100,8 @@ def profile(username):
 
     if session["user"]:
         terms = list(mongo.db.terms.find().sort("term_name", 1))
-        return render_template("profile.html", terms=terms, username=username)
+        return render_template("profile.html", terms=terms,
+                               username=username, page='profile')
 
     return redirect(url_for("login"))
 
@@ -146,7 +147,7 @@ def add_term():
         flash("Term Successfully Added to Dictionary")
         return redirect(url_for("get_terms"))
 
-    return render_template("add_term.html",)
+    return render_template("add_term.html", page='add_term')
 
 
 # edit term function find & edit an existing term on the dictionary
