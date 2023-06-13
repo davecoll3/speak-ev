@@ -513,7 +513,7 @@ The color contrast accessibility validator [a11y](https://color.a11y.com/) was u
 
 # Deployment
 
-## Creating a Gitpod Repository
+## Creating a GitHub Repository
 A GitHub repository is used to store your project, with Git and GitHub used for version control. The following steps outline how to create a GitHub repository.
   1. Log in to GitHub.
   2. In the upper-right corner of any page, use the '+' drop-down menu and select 'New repository'.
