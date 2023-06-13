@@ -144,13 +144,11 @@ Research for the creation of this site was carried out by searching for various 
 ## Wireframes
 
 * Balsamiq Wireframes was used to create the wireframes for this site. 
-Wireframes for mobile, tablet, and desktop can be found below:
+Wireframes for mobile and desktop can be found below:
 
-  ### [Phone Wireframe](/readme-files/wireframes/speak-ev-wireframes-phone.pdf)
+  ### [Phone Wireframe](readme-files/wireframes/mobile_wireframes.pdf)
 
-  ### [Tablet Wireframe](/readme-files/wireframes/speak-ev-wireframes-tablet.pdf)
-
-  ### [Desktop Wireframe](/readme-files/wireframes/speak-ev-wireframes-desktop.pdf)
+  ### [Desktop Wireframe](readme-files/wireframes/desktop_wireframes.pdf)
 
 &nbsp;
 
